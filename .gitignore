@@ -1,0 +1,13 @@
+
+*.d
+
+*.o
+*.obj
+
+*.gch
+*.pch
+
+*.exe
+*.out
+
+./Algorithms/Time Warp/Root-sim/granularity test/outputs/
