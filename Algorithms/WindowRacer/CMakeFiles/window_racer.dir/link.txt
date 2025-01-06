@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/window_racer.dir/window_racer.cpp.o CMakeFiles/window_racer.dir/event.cpp.o -o window_racer 

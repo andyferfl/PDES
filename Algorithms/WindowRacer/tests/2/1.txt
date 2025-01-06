@@ -1,0 +1,73 @@
+committed 1049888 events in 1.16s, 0.90 Mev/s
+26 windows, 40380.31 events committed per window
+--- SUMMARY STATS ---
+
+  num_windows: 25
+
+  mean initial window size: 3.79
+
+  mean final window size: 0.04
+
+  mean final/initial window size: 0.0947
+
+  num handle calls: 1.06e+06
+
+  event rollbacks/handle: 0.0126
+
+  entity rollbacks/handle: 0.0126
+
+  mean rollback length: 1
+
+  proportion remote handle calls: 0.0134
+
+  proportion instantaneous events among all handle_() calls: 0
+
+--- RAW STATS ---
+
+  MEANS ACROSS THREADS:
+    stats_num_ent_rollbacks_immediate: 11
+    stats_num_ev_rollbacks_immediate: 11
+    stats_num_ent_rollbacks_at_window_end: 6.68e+03
+    stats_num_ev_rollbacks_at_window_end: 6.68e+03
+    stats_num_handle_calls: 5.32e+05
+    stats_num_remote_handle_calls: 7.14e+03
+
+  PER-THREAD:
+    stats_num_ent_rollbacks_immediate:
+        0: 21
+        1: 2
+
+    stats_num_ev_rollbacks_immediate:
+        0: 21
+        1: 2
+
+    stats_num_ent_rollbacks_at_window_end:
+        0: 335
+        1: 1.3e+04
+
+    stats_num_ev_rollbacks_at_window_end:
+        0: 335
+        1: 1.3e+04
+
+    stats_num_handle_calls:
+        0: 5.25e+05
+        1: 5.39e+05
+
+    stats_num_remote_handle_calls:
+        0: 6.98e+03
+        1: 7.31e+03
+
+    stats_max_queue_size:
+        0: 5.25e+05
+        1: 5.25e+05
+
+    stats_max_new_ev_queue_size:
+        0: 4.61e+04
+        1: 4.71e+04
+
+    stats_num_instantaneous_events:
+        0: 0
+        1: 0
+
+
+  initial and final window sizes: (0.0001, 0.0001) (0.01, 0.01) (1, 0.0228) (2.28, 0.038571) (3.8571, 0.036685) (3.6685, 0.059164) (5.9164, 0.059932) (5.9932, 0.039849) (3.9849, 0.030892) (3.0892, 0.091797) (9.1797, 0.080117) (8.0117, 0.027336) (2.7336, 0.0096362) (0.96362, 0.054587) (5.4587, 0.011635) (1.1635, 0.053506) (5.3506, 0.071982) (7.1982, 0.039214) (3.9214, 0.039655) (3.9655, 0.019788) (1.9788, 0.036764) (3.6764, 0.018571) (1.8571, 0.014463) (1.4463, 0.080953) (8.0953, 0.052001) 

@@ -1,0 +1,73 @@
+committed 2099185 events in 1.45s, 1.44 Mev/s
+40 windows, 52479.62 events committed per window
+--- SUMMARY STATS ---
+
+  num_windows: 39
+
+  mean initial window size: 4.94
+
+  mean final window size: 0.0513
+
+  mean final/initial window size: 0.0644
+
+  num handle calls: 2.12e+06
+
+  event rollbacks/handle: 0.00963
+
+  entity rollbacks/handle: 0.00962
+
+  mean rollback length: 1
+
+  proportion remote handle calls: 0.0164
+
+  proportion instantaneous events among all handle_() calls: 0
+
+--- RAW STATS ---
+
+  MEANS ACROSS THREADS:
+    stats_num_ent_rollbacks_immediate: 18
+    stats_num_ev_rollbacks_immediate: 18
+    stats_num_ent_rollbacks_at_window_end: 1.02e+04
+    stats_num_ev_rollbacks_at_window_end: 1.02e+04
+    stats_num_handle_calls: 1.06e+06
+    stats_num_remote_handle_calls: 1.74e+04
+
+  PER-THREAD:
+    stats_num_ent_rollbacks_immediate:
+        0: 37
+        1: 0
+
+    stats_num_ev_rollbacks_immediate:
+        0: 37
+        1: 0
+
+    stats_num_ent_rollbacks_at_window_end:
+        0: 574
+        1: 1.98e+04
+
+    stats_num_ev_rollbacks_at_window_end:
+        0: 574
+        1: 1.98e+04
+
+    stats_num_handle_calls:
+        0: 1.05e+06
+        1: 1.07e+06
+
+    stats_num_remote_handle_calls:
+        0: 1.7e+04
+        1: 1.77e+04
+
+    stats_max_queue_size:
+        0: 5.25e+05
+        1: 5.25e+05
+
+    stats_max_new_ev_queue_size:
+        0: 7.05e+04
+        1: 7.13e+04
+
+    stats_num_instantaneous_events:
+        0: 0
+        1: 0
+
+
+  initial and final window sizes: (0.0001, 0.0001) (0.01, 0.01) (1, 0.0228) (2.28, 0.038571) (3.8571, 0.040708) (4.0708, 0.055141) (5.5141, 0.059932) (5.9932, 0.039849) (3.9849, 0.14454) (14.454, 0.049751) (4.9751, 0.035849) (3.5849, 0.0096362) (0.96362, 0.054587) (5.4587, 0.058977) (5.8977, 0.078145) (7.8145, 0.049993) (4.9993, 0.06325) (6.325, 0.013315) (1.3315, 0.041897) (4.1897, 0.083589) (8.3589, 0.053069) (5.3069, 0.087566) (8.7566, 0.052911) (5.2911, 0.032636) (3.2636, 0.083797) (8.3797, 0.033695) (3.3695, 0.075064) (7.5064, 0.09034) (9.034, 0.10673) (10.673, 0.045978) (4.5978, 0.066348) (6.6348, 0.031561) (3.1561, 0.057864) (5.7864, 0.025889) (2.5889, 0.028103) (2.8103, 0.023232) (2.3232, 0.047657) (4.7657, 0.031897) (3.1897, 0.075032) 

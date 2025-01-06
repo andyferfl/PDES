@@ -1,0 +1,127 @@
+committed 1049888 events in 1.42s, 0.74 Mev/s
+37 windows, 28375.35 events committed per window
+--- SUMMARY STATS ---
+
+  num_windows: 36
+
+  mean initial window size: 0.687
+
+  mean final window size: 0.0278
+
+  mean final/initial window size: 0.131
+
+  num handle calls: 1.1e+06
+
+  event rollbacks/handle: 0.0468
+
+  entity rollbacks/handle: 0.0467
+
+  mean rollback length: 1
+
+  proportion remote handle calls: 0.016
+
+  proportion instantaneous events among all handle_() calls: 0
+
+--- RAW STATS ---
+
+  MEANS ACROSS THREADS:
+    stats_num_ent_rollbacks_immediate: 2
+    stats_num_ev_rollbacks_immediate: 2
+    stats_num_ent_rollbacks_at_window_end: 6.43e+03
+    stats_num_ev_rollbacks_at_window_end: 6.44e+03
+    stats_num_handle_calls: 1.38e+05
+    stats_num_remote_handle_calls: 2.21e+03
+
+  PER-THREAD:
+    stats_num_ent_rollbacks_immediate:
+        0: 8
+        1: 5
+        2: 15
+        3: 3
+        4: 2
+        5: 2
+        6: 4
+        7: 2
+
+    stats_num_ev_rollbacks_immediate:
+        0: 8
+        1: 5
+        2: 15
+        3: 3
+        4: 2
+        5: 2
+        6: 4
+        7: 2
+
+    stats_num_ent_rollbacks_at_window_end:
+        0: 3.94e+03
+        1: 4.14e+03
+        2: 1.53e+03
+        3: 8.2e+03
+        4: 6.43e+03
+        5: 8.77e+03
+        6: 1.1e+04
+        7: 7.47e+03
+
+    stats_num_ev_rollbacks_at_window_end:
+        0: 3.95e+03
+        1: 4.14e+03
+        2: 1.53e+03
+        3: 8.21e+03
+        4: 6.44e+03
+        5: 8.78e+03
+        6: 1.1e+04
+        7: 7.48e+03
+
+    stats_num_handle_calls:
+        0: 1.35e+05
+        1: 1.35e+05
+        2: 1.33e+05
+        3: 1.4e+05
+        4: 1.38e+05
+        5: 1.4e+05
+        6: 1.43e+05
+        7: 1.38e+05
+
+    stats_num_remote_handle_calls:
+        0: 2.14e+03
+        1: 2.15e+03
+        2: 1.99e+03
+        3: 2.3e+03
+        4: 2.21e+03
+        5: 2.35e+03
+        6: 2.39e+03
+        7: 2.16e+03
+
+    stats_max_queue_size:
+        0: 1.31e+05
+        1: 1.31e+05
+        2: 1.31e+05
+        3: 1.31e+05
+        4: 1.31e+05
+        5: 1.32e+05
+        6: 1.32e+05
+        7: 1.31e+05
+
+    stats_max_new_ev_queue_size:
+        0: 8.04e+03
+        1: 8.19e+03
+        2: 8.07e+03
+        3: 8.23e+03
+        4: 8.14e+03
+        5: 8.04e+03
+        6: 8.41e+03
+        7: 8.16e+03
+
+    stats_num_instantaneous_events:
+        0: 0
+        1: 0
+        2: 0
+        3: 0
+        4: 0
+        5: 0
+        6: 0
+        7: 0
+
+
+  initial and final window sizes: (0.0001, 0.0001) (0.0025, 0.0025) (0.0625, 0.016489) (0.41223, 0.024593) (0.61482, 0.027789) (0.69474, 0.028374) (0.70934, 0.026808) (0.67021, 0.037562) (0.93906, 0.027733) (0.69332, 0.030459) (0.76148, 0.023589) (0.58973, 0.021104) (0.52761, 0.030892) (0.77229, 0.027621) (0.69053, 0.063473) (1.5868, 0.020197) (0.50494, 0.038902) (0.97256, 0.010967) (0.27417, 0.012408) (0.31021, 0.033696) (0.8424, 0.0016206) (0.040515, 0.037283) (0.93208, 0.036415) (0.91038, 0.033696) (0.84241, 0.056095) (1.4024, 0.02822) (0.7055, 0.039214) (0.98035, 0.032755) (0.81887, 0.026689) (0.66722, 0.036764) (0.9191, 0.018571) (0.46428, 0.014463) (0.36157, 0.010199) (0.25499, 0.059991) (1.4998, 0.051714) (1.2929, 0.01105) 
