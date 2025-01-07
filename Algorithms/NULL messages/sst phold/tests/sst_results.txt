@@ -1,0 +1,34 @@
+LP=2, WT=2: Average Total time=0.277173, Average Receives=83220, mev/s=0.300246, Granularity=100000000
+LP=2, WT=2: Average Total time=0.567522, Average Receives=195646, mev/s=0.344737, Granularity=10000
+LP=2, WT=2: Average Total time=0.456702, Average Receives=158466, mev/s=0.346979, Granularity=1
+LP=16, WT=2: Average Total time=0.252378, Average Receives=138144, mev/s=0.547369, Granularity=100000000
+LP=16, WT=2: Average Total time=0.258342, Average Receives=73024, mev/s=0.282664, Granularity=10000
+LP=16, WT=2: Average Total time=0.202798, Average Receives=85040, mev/s=0.419334, Granularity=1
+LP=64, WT=2: Average Total time=0.311057, Average Receives=71360, mev/s=0.229411, Granularity=100000000
+LP=64, WT=2: Average Total time=0.408887, Average Receives=97664, mev/s=0.238853, Granularity=10000
+LP=64, WT=2: Average Total time=0.284397, Average Receives=82496, mev/s=0.290073, Granularity=1
+LP=128, WT=2: Average Total time=0.46452, Average Receives=81152, mev/s=0.174701, Granularity=100000000
+LP=128, WT=2: Average Total time=0.47028, Average Receives=64896, mev/s=0.137994, Granularity=10000
+LP=128, WT=2: Average Total time=0.461656, Average Receives=73600, mev/s=0.159426, Granularity=1
+LP=2, WT=2: Average Total time=0.81071, Average Receives=308020, mev/s=0.379939, Granularity=0
+LP=4, WT=4: Average Total time=121.334, Average Receives=2581560, mev/s=0.0212765, Granularity=0
+
+LP=2, WT=2: Average Total time=0.27957, Average Receives=290373, mev/s=1.03864, LOOKAHEAD=1 
+LP=2, WT=2: Average Total time=0.106266, Average Receives=19693, mev/s=0.185318, LOOKAHEAD=1000 
+LP=2, WT=2: Average Total time=0.0542888, Average Receives=2123, mev/s=0.0391057, LOOKAHEAD=10000 
+
+LP=16, WT=2: Average Total time=0.124086, Average Receives=16194, mev/s=0.130506, LOOKAHEAD=1 
+LP=16, WT=2: Average Total time=0.105278, Average Receives=57, mev/s=0.000541424, LOOKAHEAD=1000 
+LP=16, WT=2: Average Total time=0.0549627, Average Receives=27, mev/s=0.000491242, LOOKAHEAD=10000 
+
+LP=64, WT=2: Average Total time=0.577823, Average Receives=628022, mev/s=1.08688, LOOKAHEAD=1 
+LP=64, WT=2: Average Total time=0.0802493, Average Receives=1101, mev/s=0.0137197, LOOKAHEAD=1000 
+LP=64, WT=2: Average Total time=0.121789, Average Receives=228, mev/s=0.00187209, LOOKAHEAD=10000 
+
+LP=128, WT=2: Average Total time=0.324713, Average Receives=128640, mev/s=0.396165, LOOKAHEAD=1 
+LP=128, WT=2: Average Total time=0.190237, Average Receives=1888, mev/s=0.00992446, LOOKAHEAD=1000 
+LP=128, WT=2: Average Total time=0.172869, Average Receives=448, mev/s=0.00259156, LOOKAHEAD=10000 
+
+LP=512, WT=2: Average Total time=2.45111, Average Receives=104562, mev/s=0.042659, LOOKAHEAD=1 
+LP=512, WT=2: Average Total time=2.41866, Average Receives=2759, mev/s=0.00114071, LOOKAHEAD=1000 
+LP=512, WT=2: Average Total time=2.14437, Average Receives=913, mev/s=0.000425766, LOOKAHEAD=10000 
