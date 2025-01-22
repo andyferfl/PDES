@@ -1,0 +1,2171 @@
+1 iteration 2000 lp's sequential
+2 iteration 2000 lp's sequential
+3 iteration 2000 lp's sequential
+4 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 45040.865855
+TIME BARRIER: 90093.383508
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:04:59 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:01 
+TOTAL SIMULATION TIME ..... : 2.671 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215023 
+AVERAGE EVENT COST......... : 12.422 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 90093.383508
+SIMULATION TIME SPEED...... : 45042.03 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+5 iteration 2000 lp's sequential
+6 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 32033.695572
+TIME BARRIER: 62065.328095
+TIME BARRIER: 92087.261798
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:07 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:10 
+TOTAL SIMULATION TIME ..... : 3.352 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214446 
+AVERAGE EVENT COST......... : 15.631 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 92087.261798
+SIMULATION TIME SPEED...... : 31652.33 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+7 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:07 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:10 
+TOTAL SIMULATION TIME ..... : 3.352 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214446 
+AVERAGE EVENT COST......... : 15.631 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 92087.261798
+SIMULATION TIME SPEED...... : 31652.33 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+8 iteration 2000 lp's sequential
+9 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 40039.473741
+TIME BARRIER: 82070.136423
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:22 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:25 
+TOTAL SIMULATION TIME ..... : 2.608 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215678 
+AVERAGE EVENT COST......... : 12.092 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 82070.136423
+SIMULATION TIME SPEED...... : 40238.59 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+10 iteration 2000 lp's sequential
+11 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 30028.203935
+TIME BARRIER: 57058.285875
+TIME BARRIER: 81088.335801
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:32 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:36 
+TOTAL SIMULATION TIME ..... : 3.558 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214548 
+AVERAGE EVENT COST......... : 16.584 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 81088.335801
+SIMULATION TIME SPEED...... : 29158.56 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+12 iteration 2000 lp's sequential
+13 iteration 2000 lp's sequential
+14 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 30031.129031
+TIME BARRIER: 59065.223338
+TIME BARRIER: 92085.374359
+TIME BARRIER: 103102.525360
+TIME BARRIER: 107099.471641
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:47 
+SIMULATION FINISHED AT .... : 2025-01-18 13:05:52 
+TOTAL SIMULATION TIME ..... : 5.364 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215016 
+AVERAGE EVENT COST......... : 24.947 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 107099.471641
+SIMULATION TIME SPEED...... : 25885.88 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+15 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 29029.595207
+TIME BARRIER: 38036.002227
+TIME BARRIER: 56063.693452
+TIME BARRIER: 92092.686570
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:56 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:01 
+TOTAL SIMULATION TIME ..... : 4.386 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217022 
+AVERAGE EVENT COST......... : 20.210 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 92092.686570
+SIMULATION TIME SPEED...... : 27117.49 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+16 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:05:56 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:01 
+TOTAL SIMULATION TIME ..... : 4.386 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217022 
+AVERAGE EVENT COST......... : 20.210 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 92092.686570
+SIMULATION TIME SPEED...... : 27117.49 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+17 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 45051.158182
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:09 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:09 
+TOTAL SIMULATION TIME ..... : 0.878 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 212842 
+AVERAGE EVENT COST......... : 4.125 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 45051.158182
+SIMULATION TIME SPEED...... : 45051.16 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+18 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 31030.750300
+TIME BARRIER: 60058.563429
+TIME BARRIER: 89092.530778
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:13 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:16 
+TOTAL SIMULATION TIME ..... : 3.513 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 218143 
+AVERAGE EVENT COST......... : 16.104 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 89092.530778
+SIMULATION TIME SPEED...... : 30650.81 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+19 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:13 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:16 
+TOTAL SIMULATION TIME ..... : 3.513 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 218143 
+AVERAGE EVENT COST......... : 16.104 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 89092.530778
+SIMULATION TIME SPEED...... : 30650.81 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+20 iteration 2000 lp's sequential
+21 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 40040.886047
+TIME BARRIER: 67075.145516
+TIME BARRIER: 91110.799982
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:29 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:32 
+TOTAL SIMULATION TIME ..... : 3.393 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 216179 
+AVERAGE EVENT COST......... : 15.695 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 91110.799982
+SIMULATION TIME SPEED...... : 37269.77 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+22 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 12016.852376
+TIME BARRIER: 33024.103145
+TIME BARRIER: 70078.023708
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:36 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:40 
+TOTAL SIMULATION TIME ..... : 3.815 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217019 
+AVERAGE EVENT COST......... : 17.579 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 70078.023708
+SIMULATION TIME SPEED...... : 15329.70 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.11 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+23 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:36 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:40 
+TOTAL SIMULATION TIME ..... : 3.815 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217019 
+AVERAGE EVENT COST......... : 17.579 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 70078.023708
+SIMULATION TIME SPEED...... : 15329.70 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.11 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+24 iteration 2000 lp's sequential
+25 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 19017.495934
+TIME BARRIER: 47065.203994
+TIME BARRIER: 83075.188618
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:06:50 
+SIMULATION FINISHED AT .... : 2025-01-18 13:06:54 
+TOTAL SIMULATION TIME ..... : 3.566 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213563 
+AVERAGE EVENT COST......... : 16.698 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 83075.188618
+SIMULATION TIME SPEED...... : 21529.46 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+26 iteration 2000 lp's sequential
+27 iteration 2000 lp's sequential
+28 iteration 2000 lp's sequential
+29 iteration 2000 lp's sequential
+30 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 39035.785102
+TIME BARRIER: 78064.331433
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:12 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:15 
+TOTAL SIMULATION TIME ..... : 2.817 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215830 
+AVERAGE EVENT COST......... : 13.052 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 78064.331433
+SIMULATION TIME SPEED...... : 39035.06 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+31 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:12 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:15 
+TOTAL SIMULATION TIME ..... : 2.817 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215830 
+AVERAGE EVENT COST......... : 13.052 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 78064.331433
+SIMULATION TIME SPEED...... : 39035.06 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+32 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 19020.895720
+TIME BARRIER: 38043.140037
+TIME BARRIER: 71072.628766
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:22 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:26 
+TOTAL SIMULATION TIME ..... : 3.820 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215878 
+AVERAGE EVENT COST......... : 17.695 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 71072.628766
+SIMULATION TIME SPEED...... : 20421.88 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+33 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 32041.285276
+TIME BARRIER: 65061.886544
+TIME BARRIER: 107095.820565
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:30 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:33 
+TOTAL SIMULATION TIME ..... : 3.010 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214924 
+AVERAGE EVENT COST......... : 14.005 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 107095.820565
+SIMULATION TIME SPEED...... : 33128.69 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+34 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 30033.728954
+TIME BARRIER: 59061.011721
+TIME BARRIER: 97091.449033
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:37 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:41 
+TOTAL SIMULATION TIME ..... : 3.260 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213768 
+AVERAGE EVENT COST......... : 15.250 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 97091.449033
+SIMULATION TIME SPEED...... : 30742.82 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+35 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 29038.775040
+TIME BARRIER: 60056.183356
+TIME BARRIER: 100114.569836
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:43 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:47 
+TOTAL SIMULATION TIME ..... : 3.196 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217681 
+AVERAGE EVENT COST......... : 14.682 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 100114.569836
+SIMULATION TIME SPEED...... : 30318.81 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+36 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:43 
+SIMULATION FINISHED AT .... : 2025-01-18 13:07:47 
+TOTAL SIMULATION TIME ..... : 3.196 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217681 
+AVERAGE EVENT COST......... : 14.682 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 100114.569836
+SIMULATION TIME SPEED...... : 30318.81 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+37 iteration 2000 lp's sequential
+38 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 22017.498639
+TIME BARRIER: 23025.886558
+TIME BARRIER: 29026.219951
+TIME BARRIER: 32035.513805
+TIME BARRIER: 34039.997199
+TIME BARRIER: 39043.285398
+TIME BARRIER: 41037.226689
+TIME BARRIER: 65071.437250
+TIME BARRIER: 76068.307317
+TIME BARRIER: 78070.694382
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:07:58 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:09 
+TOTAL SIMULATION TIME ..... : 10.763 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217328 
+AVERAGE EVENT COST......... : 49.524 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 78070.694382
+SIMULATION TIME SPEED...... : 12749.07 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+39 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 21015.895268
+TIME BARRIER: 53052.475747
+TIME BARRIER: 87075.348242
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:12 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:15 
+TOTAL SIMULATION TIME ..... : 3.469 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213478 
+AVERAGE EVENT COST......... : 16.250 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 87075.348242
+SIMULATION TIME SPEED...... : 23308.45 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+40 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 24023.449921
+TIME BARRIER: 55045.866675
+TIME BARRIER: 94077.825930
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:20 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:23 
+TOTAL SIMULATION TIME ..... : 3.381 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 218486 
+AVERAGE EVENT COST......... : 15.475 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 94077.825930
+SIMULATION TIME SPEED...... : 26154.21 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+41 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 45047.406550
+TIME BARRIER: 91091.130535
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:27 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:29 
+TOTAL SIMULATION TIME ..... : 2.336 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214765 
+AVERAGE EVENT COST......... : 10.877 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 91091.130535
+SIMULATION TIME SPEED...... : 45147.04 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+42 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 44042.677229
+TIME BARRIER: 90089.156671
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:33 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:36 
+TOTAL SIMULATION TIME ..... : 2.383 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215545 
+AVERAGE EVENT COST......... : 11.056 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 90089.156671
+SIMULATION TIME SPEED...... : 44243.06 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+43 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:33 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:36 
+TOTAL SIMULATION TIME ..... : 2.383 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215545 
+AVERAGE EVENT COST......... : 11.056 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 90089.156671
+SIMULATION TIME SPEED...... : 44243.06 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+44 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 25024.149066
+TIME BARRIER: 59051.525950
+TIME BARRIER: 102107.280511
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:42 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:46 
+TOTAL SIMULATION TIME ..... : 3.097 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214320 
+AVERAGE EVENT COST......... : 14.450 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 102107.280511
+SIMULATION TIME SPEED...... : 27637.60 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+45 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 30040.035626
+TIME BARRIER: 60060.798975
+TIME BARRIER: 96101.275233
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:50 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:53 
+TOTAL SIMULATION TIME ..... : 3.267 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213307 
+AVERAGE EVENT COST......... : 15.316 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 96101.275233
+SIMULATION TIME SPEED...... : 30638.35 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+46 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:08:50 
+SIMULATION FINISHED AT .... : 2025-01-18 13:08:53 
+TOTAL SIMULATION TIME ..... : 3.267 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213307 
+AVERAGE EVENT COST......... : 15.316 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 96101.275233
+SIMULATION TIME SPEED...... : 30638.35 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+47 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 36036.197327
+TIME BARRIER: 78092.266278
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:00 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:03 
+TOTAL SIMULATION TIME ..... : 2.679 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 216381 
+AVERAGE EVENT COST......... : 12.381 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 78092.266278
+SIMULATION TIME SPEED...... : 36638.18 units per GVT
+AVERAGE MEMORY USAGE....... : 1.73 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+48 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 35037.671444
+TIME BARRIER: 69067.367140
+TIME BARRIER: 105101.481649
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:07 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:10 
+TOTAL SIMULATION TIME ..... : 3.036 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 212482 
+AVERAGE EVENT COST......... : 14.288 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 105101.481649
+SIMULATION TIME SPEED...... : 35046.60 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+49 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:07 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:10 
+TOTAL SIMULATION TIME ..... : 3.036 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 212482 
+AVERAGE EVENT COST......... : 14.288 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 105101.481649
+SIMULATION TIME SPEED...... : 35046.60 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+50 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 31027.103221
+TIME BARRIER: 61056.834936
+TIME BARRIER: 99105.589948
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:17 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:20 
+TOTAL SIMULATION TIME ..... : 3.205 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215946 
+AVERAGE EVENT COST......... : 14.842 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 99105.589948
+SIMULATION TIME SPEED...... : 31639.50 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+51 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 22017.751113
+TIME BARRIER: 46056.956411
+TIME BARRIER: 86090.380862
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:24 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:28 
+TOTAL SIMULATION TIME ..... : 3.508 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215635 
+AVERAGE EVENT COST......... : 16.268 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 86090.380862
+SIMULATION TIME SPEED...... : 24001.25 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+52 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:24 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:28 
+TOTAL SIMULATION TIME ..... : 3.508 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215635 
+AVERAGE EVENT COST......... : 16.268 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 86090.380862
+SIMULATION TIME SPEED...... : 24001.25 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+53 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 33026.718790
+TIME BARRIER: 66075.881846
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:37 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:40 
+TOTAL SIMULATION TIME ..... : 2.952 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 220476 
+AVERAGE EVENT COST......... : 13.389 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 66075.881846
+SIMULATION TIME SPEED...... : 33028.96 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+54 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:37 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:40 
+TOTAL SIMULATION TIME ..... : 2.952 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 220476 
+AVERAGE EVENT COST......... : 13.389 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 66075.881846
+SIMULATION TIME SPEED...... : 33028.96 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+55 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 14014.360303
+TIME BARRIER: 46059.847919
+TIME BARRIER: 93081.296175
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:46 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:50 
+TOTAL SIMULATION TIME ..... : 3.293 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213879 
+AVERAGE EVENT COST......... : 15.397 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 93081.296175
+SIMULATION TIME SPEED...... : 18937.87 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+56 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:46 
+SIMULATION FINISHED AT .... : 2025-01-18 13:09:50 
+TOTAL SIMULATION TIME ..... : 3.293 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213879 
+AVERAGE EVENT COST......... : 15.397 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 93081.296175
+SIMULATION TIME SPEED...... : 18937.87 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+57 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 13012.827309
+TIME BARRIER: 15018.367914
+TIME BARRIER: 18013.764974
+TIME BARRIER: 26026.482915
+TIME BARRIER: 40043.316041
+TIME BARRIER: 84074.054538
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:09:57 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:04 
+TOTAL SIMULATION TIME ..... : 6.680 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 212672 
+AVERAGE EVENT COST......... : 31.410 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 84074.054538
+SIMULATION TIME SPEED...... : 14347.51 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+58 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 34034.960040
+TIME BARRIER: 68074.058169
+TIME BARRIER: 74071.748936
+TIME BARRIER: 79074.527851
+TIME BARRIER: 101113.672622
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:08 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:13 
+TOTAL SIMULATION TIME ..... : 5.122 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213536 
+AVERAGE EVENT COST......... : 23.987 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 101113.672622
+SIMULATION TIME SPEED...... : 27951.77 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+59 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:08 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:13 
+TOTAL SIMULATION TIME ..... : 5.122 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213536 
+AVERAGE EVENT COST......... : 23.987 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 101113.672622
+SIMULATION TIME SPEED...... : 27951.77 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+60 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 28036.643826
+TIME BARRIER: 56067.574928
+TIME BARRIER: 58053.162198
+TIME BARRIER: 65082.125841
+TIME BARRIER: 69068.136675
+TIME BARRIER: 76070.539309
+TIME BARRIER: 79087.870221
+TIME BARRIER: 88103.234498
+TIME BARRIER: 92089.495444
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:20 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:29 
+TOTAL SIMULATION TIME ..... : 9.381 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214464 
+AVERAGE EVENT COST......... : 43.742 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 92089.495444
+SIMULATION TIME SPEED...... : 16156.55 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+61 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 40028.663038
+TIME BARRIER: 79089.184678
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:34 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:37 
+TOTAL SIMULATION TIME ..... : 2.967 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214478 
+AVERAGE EVENT COST......... : 13.834 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 79089.184678
+SIMULATION TIME SPEED...... : 39931.85 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+62 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:34 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:37 
+TOTAL SIMULATION TIME ..... : 2.967 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214478 
+AVERAGE EVENT COST......... : 13.834 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 79089.184678
+SIMULATION TIME SPEED...... : 39931.85 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+63 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 22028.813093
+TIME BARRIER: 96102.552449
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:10:44 
+SIMULATION FINISHED AT .... : 2025-01-18 13:10:47 
+TOTAL SIMULATION TIME ..... : 2.243 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215392 
+AVERAGE EVENT COST......... : 10.414 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 96102.552449
+SIMULATION TIME SPEED...... : 27233.31 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+64 iteration 2000 lp's sequential
+65 iteration 2000 lp's sequential
+66 iteration 2000 lp's sequential
+67 iteration 2000 lp's sequential
+68 iteration 2000 lp's sequential
+69 iteration 2000 lp's sequential
+70 iteration 2000 lp's sequential
+71 iteration 2000 lp's sequential
+72 iteration 2000 lp's sequential
+73 iteration 2000 lp's sequential
+74 iteration 2000 lp's sequential
+75 iteration 2000 lp's sequential
+76 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:11:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:11:48 
+TOTAL SIMULATION TIME ..... : 0.870 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213478 
+AVERAGE EVENT COST......... : 4.075 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 0.000000
+SIMULATION TIME SPEED...... : 0.00 units per GVT
+AVERAGE MEMORY USAGE....... : -nan GB
+PEAK MEMORY USAGE.......... : 6.99 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+77 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:11:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:11:48 
+TOTAL SIMULATION TIME ..... : 0.870 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213478 
+AVERAGE EVENT COST......... : 4.075 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 0.000000
+SIMULATION TIME SPEED...... : 0.00 units per GVT
+AVERAGE MEMORY USAGE....... : -nan GB
+PEAK MEMORY USAGE.......... : 6.99 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+78 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:11:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:11:48 
+TOTAL SIMULATION TIME ..... : 0.870 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213478 
+AVERAGE EVENT COST......... : 4.075 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 0.000000
+SIMULATION TIME SPEED...... : 0.00 units per GVT
+AVERAGE MEMORY USAGE....... : -nan GB
+PEAK MEMORY USAGE.......... : 6.99 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+79 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:11:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:11:48 
+TOTAL SIMULATION TIME ..... : 0.870 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 213478 
+AVERAGE EVENT COST......... : 4.075 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 0.000000
+SIMULATION TIME SPEED...... : 0.00 units per GVT
+AVERAGE MEMORY USAGE....... : -nan GB
+PEAK MEMORY USAGE.......... : 6.99 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+80 iteration 2000 lp's sequential
+81 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 24022.697839
+TIME BARRIER: 47036.243681
+TIME BARRIER: 88090.474531
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:12:12 
+SIMULATION FINISHED AT .... : 2025-01-18 13:12:15 
+TOTAL SIMULATION TIME ..... : 3.471 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 217704 
+AVERAGE EVENT COST......... : 15.944 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 88090.474531
+SIMULATION TIME SPEED...... : 25635.03 units per GVT
+AVERAGE MEMORY USAGE....... : 1.71 GB
+PEAK MEMORY USAGE.......... : 7.06 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+82 iteration 2000 lp's sequential
+83 iteration 2000 lp's sequential
+84 iteration 2000 lp's sequential
+85 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 26025.311328
+TIME BARRIER: 56071.837810
+TIME BARRIER: 97116.052265
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:12:31 
+SIMULATION FINISHED AT .... : 2025-01-18 13:12:34 
+TOTAL SIMULATION TIME ..... : 3.235 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214188 
+AVERAGE EVENT COST......... : 15.104 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 97116.052265
+SIMULATION TIME SPEED...... : 27889.11 units per GVT
+AVERAGE MEMORY USAGE....... : 1.74 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+86 iteration 2000 lp's sequential
+87 iteration 2000 lp's sequential
+88 iteration 2000 lp's sequential
+89 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 25014.090604
+TIME BARRIER: 58060.765211
+TIME BARRIER: 87093.341405
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:12:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:12:52 
+TOTAL SIMULATION TIME ..... : 3.496 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 216571 
+AVERAGE EVENT COST......... : 16.143 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 87093.341405
+SIMULATION TIME SPEED...... : 26138.87 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+90 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:12:48 
+SIMULATION FINISHED AT .... : 2025-01-18 13:12:52 
+TOTAL SIMULATION TIME ..... : 3.496 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 216571 
+AVERAGE EVENT COST......... : 16.143 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 87093.341405
+SIMULATION TIME SPEED...... : 26138.87 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+91 iteration 2000 lp's sequential
+92 iteration 2000 lp's sequential
+93 iteration 2000 lp's sequential
+94 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 31031.615221
+TIME BARRIER: 61074.094187
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:13:11 
+SIMULATION FINISHED AT .... : 2025-01-18 13:13:14 
+TOTAL SIMULATION TIME ..... : 2.995 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214154 
+AVERAGE EVENT COST......... : 13.985 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 61074.094187
+SIMULATION TIME SPEED...... : 30932.70 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+95 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:13:11 
+SIMULATION FINISHED AT .... : 2025-01-18 13:13:14 
+TOTAL SIMULATION TIME ..... : 2.995 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 214154 
+AVERAGE EVENT COST......... : 13.985 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 61074.094187
+SIMULATION TIME SPEED...... : 30932.70 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.10 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+96 iteration 2000 lp's sequential
+97 iteration 2000 lp's sequential
+98 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 15017.236708
+TIME BARRIER: 18019.898588
+TIME BARRIER: 38031.695202
+TIME BARRIER: 63061.033016
+TIME BARRIER: 105093.395402
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:13:29 
+SIMULATION FINISHED AT .... : 2025-01-18 13:13:34 
+TOTAL SIMULATION TIME ..... : 5.078 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 216562 
+AVERAGE EVENT COST......... : 23.448 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 105093.395402
+SIMULATION TIME SPEED...... : 18148.54 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.08 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+99 iteration 2000 lp's sequential
+****************************
+*  ROOT-Sim Configuration  *
+****************************
+Kernels: 1
+Cores: 20 available, 0 used
+Number of Logical Processes: 2000
+Output Statistics Directory: outputs
+Scheduler: stf
+MPI multithread support: yes
+GVT Time Period: 1.00 seconds
+Checkpointing Type: periodic
+Checkpointing Period: 10
+Snapshot Reconstruction Type: full
+Halt Simulation After: 0
+LPs Distribution Mode across Kernels: block
+Check Termination Mode: normal
+Set Seed: 0
+TIME BARRIER: 33033.939188
+TIME BARRIER: 42040.341994
+TIME BARRIER: 53051.404771
+TIME BARRIER: 59060.705033
+TIME BARRIER: 105106.832412
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:13:38 
+SIMULATION FINISHED AT .... : 2025-01-18 13:13:43 
+TOTAL SIMULATION TIME ..... : 5.063 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215924 
+AVERAGE EVENT COST......... : 23.448 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 105106.832412
+SIMULATION TIME SPEED...... : 28367.48 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
+100 iteration 2000 lp's sequential
+------------------------------------------------------------
+----------------------SERIAL STATISTICS---------------------
+------------------------------------------------------------
+
+SIMULATION STARTED AT ..... : 2025-01-18 13:13:38 
+SIMULATION FINISHED AT .... : 2025-01-18 13:13:43 
+TOTAL SIMULATION TIME ..... : 5.063 seconds 
+
+TOTAL LPs.................. : 2000 
+TOTAL EXECUTED EVENTS ..... : 215924 
+AVERAGE EVENT COST......... : 23.448 us
+AVERAGE EVENT COST (EMA)... : 0.00 us
+
+LAST COMMITTED GVT ........ : 105106.832412
+SIMULATION TIME SPEED...... : 28367.48 units per GVT
+AVERAGE MEMORY USAGE....... : 1.72 GB
+PEAK MEMORY USAGE.......... : 7.09 GB
+
+--------- SIMULATION CORRECTLY COMPLETED ----------
