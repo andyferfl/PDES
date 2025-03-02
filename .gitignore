@@ -10,6 +10,6 @@
 *.exe
 *.out
 
-./Algorithms/Time Warp/Root-sim/granularity test/outputs/
-./soft/*/
-./logs/
+/Algorithms/Time Warp/Root-sim/granularity test/outputs/
+/soft/*/
+/logs/
