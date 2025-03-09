@@ -2,11 +2,10 @@
 *  ROOT-Sim Configuration  *
 ****************************
 Kernels: 1
-Cores: 20 available, 2 used
-Number of Logical Processes: 2
+Cores: 4 available, 2 used
+Number of Logical Processes: 4
 Output Statistics Directory: outputs
 Scheduler: stf
-MPI multithread support: yes
 GVT Time Period: 1.00 seconds
 Checkpointing Type: periodic
 Checkpointing Period: 10
@@ -20,34 +19,34 @@ Set Seed: 0
 -----------------------NODE STATISTICS----------------------
 ------------------------------------------------------------
 
-SIMULATION STARTED AT ..... : 2024-12-06 15:49:19 
-SIMULATION FINISHED AT .... : 2024-12-06 15:49:22 
-TOTAL SIMULATION TIME ..... : 2.983 seconds 
+SIMULATION STARTED AT ..... : 2025-03-09 22:58:51 
+SIMULATION FINISHED AT .... : 2025-03-09 22:59:04 
+TOTAL SIMULATION TIME ..... : 12.738 seconds 
 
 TOTAL KERNELS ............. : 1 
 KERNEL ID ................. : 0 
-LPs HOSTED BY KERNEL....... : 2 
+LPs HOSTED BY KERNEL....... : 4 
 TOTAL_THREADS ............. : 2 
 
-TOTAL EXECUTED EVENTS ..... : 2731325 
-TOTAL COMMITTED EVENTS..... : 773993 
-TOTAL REPROCESSED EVENTS... : 1674201 
-TOTAL ROLLBACKS EXECUTED... : 282001 
-TOTAL ANTIMESSAGES......... : 283101 
-ROLLBACK FREQUENCY......... : 10.32 %
-ROLLBACK LENGTH............ : 6.94 events
-EFFICIENCY................. : 28.34 %
-AVERAGE EVENT COST......... : 0.25 us
-AVERAGE EVENT COST (EMA)... : 0.05 us
-AVERAGE CHECKPOINT COST.... : 0.24 us
-AVERAGE RECOVERY COST...... : 0.10 us
+TOTAL EXECUTED EVENTS ..... : 1592733 
+TOTAL COMMITTED EVENTS..... : 586503 
+TOTAL REPROCESSED EVENTS... : 819473 
+TOTAL ROLLBACKS EXECUTED... : 150312 
+TOTAL ANTIMESSAGES......... : 186708 
+ROLLBACK FREQUENCY......... : 9.44 %
+ROLLBACK LENGTH............ : 6.69 events
+EFFICIENCY................. : 36.82 %
+AVERAGE EVENT COST......... : 1.14 us
+AVERAGE EVENT COST (EMA)... : 0.51 us
+AVERAGE CHECKPOINT COST.... : 0.83 us
+AVERAGE RECOVERY COST...... : 0.68 us
 AVERAGE LOG SIZE........... : 344.00 B
 
-IDLE CYCLES................ : 7145969
-LAST COMMITTED GVT ........ : 386489.361079
-NUMBER OF GVT REDUCTIONS... : 2
-SIMULATION TIME SPEED...... : 286436.68 units per GVT
-AVERAGE MEMORY USAGE....... : 317.90 MB
-PEAK MEMORY USAGE.......... : 1.00 GB
+IDLE CYCLES................ : 54068329
+LAST COMMITTED GVT ........ : 146464.264803
+NUMBER OF GVT REDUCTIONS... : 9
+SIMULATION TIME SPEED...... : 26458.84 units per GVT
+AVERAGE MEMORY USAGE....... : 78.55 MB
+PEAK MEMORY USAGE.......... : 287.62 MB
 
 --------- SIMULATION CORRECTLY COMPLETED ----------

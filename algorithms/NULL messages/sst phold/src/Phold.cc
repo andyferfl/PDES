@@ -633,10 +633,10 @@ Phold::handleEvent(SST::Event *ev, uint32_t from)
 
     // Record the receive. 
     m_recvCount->addData(1);
-    // int j = 0;
-    // for (int i = 0; i < 1; i++) {
-    //     j = i;
-    // }
+    int j = 0;
+    for (int i = 0; i < 1; i++) {
+        j = i;
+    }
 
     SendEvent();
 
