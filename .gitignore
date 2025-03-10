@@ -14,3 +14,13 @@
 /soft/*/
 /logs/
 /platforms/*/
+
+/tests/schedule-distance/*.csv
+/tests/schedule-distance/results/*
+/tests/schedule-distance/rootsim/model
+/tests/schedule-distance/rootsim/outputs/
+/tests/schedule-distance/windowracer/CMakeFiles/*
+/tests/schedule-distance/windowracer/*.txt
+/tests/schedule-distance/windowracer/*.cmake
+/tests/schedule-distance/windowracer/Makefile
+/tests/schedule-distance/windowracer/window_racer
