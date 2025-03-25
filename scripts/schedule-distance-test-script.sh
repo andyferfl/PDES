@@ -6,7 +6,7 @@ read -p "Please set the number of iterations you want for each configurations   
 read -p "Please introduce the approximated GVT when the simulation should end (eg. 10.0)  : " GVT
 read -p "Please introduce the values for lookahead separated by spaces                    : " -a LOOKAHEAD_VALUES
 read -p "Please introduce an array with the lp's numbers separated by spaces              : " -a LPS
-read -p "Please introduce an array with the threads numbers separated by spaces           : " -a THREADS_LIST
+read -p "Please introduce an array with the threads numbers separated by spaces. Max $(nproc)      : " -a THREADS_LIST
 
 echo =======================Rootsim========================================
 cd $SCHEDULE_DISTANCE_ROOTSIM_DIR
@@ -136,9 +136,6 @@ done
 echo ======================================================================
 echo =======================Processing results=============================
 cd $SCHEDULE_DISTANCE_DIR
-#$PIP_DIR install pandas
-#$PIP_DIR install seaborn
-#$PIP_DIR install numpy
 $PIP_DIR install -r requirements.txt >> logs.o
 $PYTHON_DIR process_results.py >> logs.o
 echo ======================================================================
