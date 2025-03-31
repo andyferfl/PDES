@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo =======================Setting Enviroment Variables=========================================
-. set-enviroment.sh
+. set-environment.sh
 echo ============================================================================================
 
 chmod +x $SCRIPTS_DIR/*

@@ -35,4 +35,10 @@ export SCHEDULE_DISTANCE_RESULTS_DIR=$SCHEDULE_DISTANCE_DIR/results
 export SCHEDULE_DISTANCE_ROOTSIM_DIR=$SCHEDULE_DISTANCE_DIR/rootsim
 export SCHEDULE_DISTANCE_WR_DIR=$SCHEDULE_DISTANCE_DIR/windowracer
 
+export SST_DIR=$BASE_DIR/platforms/sst-core
+export SST_SRC_DIR=$SST_DIR/sst-core-src
+export SST_BUILD_DIR=$SST_DIR/build
+export SST_INSTALL_DIR=$SST_DIR/sst-core-install
+
+export PATH=$SST_INSTALL_DIR/bin:$PATH
 
