@@ -6,7 +6,7 @@
 
 const int phold_events_per_entity = 1;
 const double phold_lambda = 1;
-const double phold_lookahead = 1;
+const double phold_lookahead = 1000;
 const double phold_remote_ratio = 1;
 const double phold_zero_delay_ratio = 0;
 const int tau = 5;

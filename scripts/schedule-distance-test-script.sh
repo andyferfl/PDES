@@ -134,6 +134,32 @@ for lookahead in "${LOOKAHEAD_VALUES[@]}"; do
 
 done
 echo ======================================================================
+echo =======================SST============================================
+cd $SCHEDULE_DISTANCE_SST_DIR/tests
+
+for lookahead in "${LOOKAHEAD_VALUES[@]}"; do
+    
+    for lp in "${LPS[@]}"; do
+
+        for threads in "${THREADS_LIST[@]}"; do
+            if [ $threads -gt $lp ]; then
+                continue
+            fi
+
+            for i in $(seq 1 "$ITERATIONS"); do
+                output_file="${SCHEDULE_DISTANCE_RESULTS_DIR}/lookahead_${lookahead}_sst_${threads}_wt_${lp}_lp.o"
+                echo -en "\r\033[K${lp} lp's ${threads} threads SST (${i} of ${ITERATIONS})"
+                echo "${i} iteration ${lp} lp's ${threads} threads SST" >> $output_file
+                sst --lib-path=$SCHEDULE_DISTANCE_SST_LIB_DIR -n $threads phold.py --stop-at=${GVT}s -- --n=$lp --minimum=$lookahead>> $output_file
+            done
+
+            echo
+        done
+
+    done
+
+done
+echo ======================================================================
 echo =======================Processing results=============================
 cd $SCHEDULE_DISTANCE_DIR
 $PIP_DIR install -r requirements.txt >> logs.o

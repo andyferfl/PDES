@@ -366,6 +366,34 @@ def parse_des(file_path):
 
     return df_des
 
+def parse_sst(file_name):
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+
+    total_time = []
+    commited = []
+
+    for line in lines:
+        tmp = re.search(r"Total time:\s+([\d\.]+)\s+seconds", line)
+        if tmp:
+            total_time.append(tmp.group(1))
+            continue
+
+        tmp = re.search(r"Grand total sends:\s+\d+, receives:\s+(\d+)", line)
+        if tmp:
+            commited.append(tmp.group(1))
+            continue
+
+    df_sst = pd.DataFrame({
+        "Total time": total_time,
+        "Total commited events": commited
+    })
+
+    df_sst['Total time'] = df_sst['Total time'].apply(pd.to_numeric)
+    df_sst['Total commited events'] = df_sst['Total commited events'].apply(pd.to_numeric)
+
+    return df_sst
+
 tw_data = None
 
 for file_path in glob.glob(RESULTS_PATH+'lookahead_*_timewarp_*_wt_*_lp.o'):
@@ -427,6 +455,30 @@ for file_path in glob.glob(RESULTS_PATH+'lookahead_*_seq_*_lp.o'):
 
     des_data = pd.concat([des_data, metrics])
 
+
+sst_data = None
+
+for file_path in glob.glob(RESULTS_PATH + 'lookahead_*_sst_*_wt_*_lp.o'):
+    filename = os.path.basename(file_path)
+    parts = filename.split('_')
+
+    if len(parts) < 7:
+        continue
+
+    lookahead = parts[1]
+    threads = parts[3]
+    lp = parts[5]
+    algorithm = 'SST'
+
+    metrics = parse_sst(file_path)
+
+    metrics['lookahead'] = lookahead
+    metrics['algorithm'] = algorithm
+    metrics['LPs'] = lp
+    metrics['Total threads'] = threads
+
+    sst_data = pd.concat([sst_data, metrics])
+
 tw_data = tw_data[tw_data['Total time'].notna()]
 tw_data = tw_data[tw_data['Total commited events'].notna()]
 
@@ -436,15 +488,22 @@ wr_data = wr_data[wr_data['Total commited events'].notna()]
 des_data = des_data[des_data['Total time'].notna()]
 des_data = des_data[des_data['Total commited events'].notna()]
 
+sst_data = sst_data[sst_data['Total time'].notna()]
+sst_data = sst_data[sst_data['Total commited events'].notna()]
+
 tw_data['Total time'] = tw_data['Total time'].str.replace('seconds', '')
 tw_data['Total time'] = tw_data['Total time'].apply(pd.to_numeric)
+
+sst_data['Total time'] = sst_data['Total time'].apply(pd.to_numeric)
 
 columns = ['Total time', 'LPs', 'Total commited events', 'lookahead', 'algorithm', 'Total threads']
 
 filtered_tw = tw_data[columns]
 filtered_wr = wr_data[columns]
 filtered_des = des_data[columns]
-union_df = pd.concat([filtered_des, filtered_tw, filtered_wr], ignore_index=True)
+filtered_sst = sst_data[columns]
+
+union_df = pd.concat([filtered_des, filtered_tw, filtered_wr, filtered_sst], ignore_index=True)
 print(union_df)
 
 grouped_mean = union_df.groupby(['lookahead', 'algorithm', 'Total threads','LPs']).mean()

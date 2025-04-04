@@ -20,10 +20,10 @@ const int cpu_stride = 1;
 
 const uint64_t num_threads = 4;
 
-const uint64_t num_entities = 16;
+const uint64_t num_entities = 64;
 
 const int phold_events_per_entity = 1;
 const double phold_lambda = 1;
-const double phold_lookahead = 1;
+const double phold_lookahead = 1000;
 const double phold_remote_ratio = 1;
 const double phold_zero_delay_ratio = 0;

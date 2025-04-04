@@ -34,3 +34,7 @@ $SST_SRC_DIR/configure --prefix=$SST_INSTALL_DIR >> $INSTALL_LOGS_DIR 2>&1
 make all >> $INSTALL_LOGS_DIR 2>&1
 make install >> $INSTALL_LOGS_DIR 2>&1
 
+echo "SST PHOLD..."
+cd $SCHEDULE_DISTANCE_SST_SRC_DIR
+make >> $INSTALL_LOGS_DIR 2>&1
+make install >> $INSTALL_LOGS_DIR 2>&1
