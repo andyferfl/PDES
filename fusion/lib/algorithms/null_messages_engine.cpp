@@ -10,7 +10,7 @@
 
 namespace fusion
 {
-
+// Specialized LP for null messages
 class NullMessagesEngine::NullMessagesLP : public LogicalProcess
 {
 public:
@@ -22,9 +22,14 @@ public:
     {
     }
 
+    /**
+     * @brief process the next event in the event_queue
+     * 
+     * @return true if the event was processed
+     * @return false if the event_queue is empty 
+     */
     bool processNextEvent() override
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         if (event_queue_.empty())
         {
             return false;
@@ -32,12 +37,6 @@ public:
 
         Event event = event_queue_.top();
         event_queue_.pop();
-
-        if (event.getTypeId() == NULL_MESSAGE_TYPE_ID)
-        {
-            input_times_[event.getSendingLP()] = event.getTimestamp();
-            return true;
-        }
 
         setLocalVirtualTime(event.getTimestamp());
 
@@ -52,24 +51,30 @@ public:
 
         for (const auto& new_event : new_events)
         {
-            uint32_t target_lp = new_event.getReceivingLP();
+            uint64_t target_entity = new_event.getTargetId();
+            uint32_t target_lp = getEntityLP(target_entity);
+
             if (target_lp == getId())
             {
                 event_queue_.push(new_event);
             }
             else
             {
-                pending_remote_events_[target_lp].push_back(new_event);
+               pending_remote_events_[target_lp].push_back(new_event);
             }
         }
-
+        generated_events_ += new_events.size();
         processed_events_++;
         return true;
     }
 
+    /**
+     * @brief Deliver the events to the corresponding LP's
+     * 
+     * @param all_lps a vector with references to all LP's
+     */
     void deliverRemoteEvents(std::vector<NullMessagesLP*>& all_lps)
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         for (uint32_t target_lp = 0; target_lp < pending_remote_events_.size(); ++target_lp)
         {
             auto& events = pending_remote_events_[target_lp];
@@ -84,12 +89,15 @@ public:
         }
     }
 
+    /**
+     * @brief Send null messages using input channels
+     * 
+     * @param all_lps a vector with references to all LP's
+     */
     void sendNullMessages(std::vector<NullMessagesLP*>& all_lps)
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         double current_time = getLocalVirtualTime();
-
-        if (current_time > last_null_messages_time_)
+        if (current_time >= last_null_messages_time_)
         {
             last_null_messages_time_ = current_time;
 
@@ -101,20 +109,19 @@ public:
                 }
 
                 double safe_time = current_time + getLookahead();
-
-                Event null_message(safe_time, getId(), 0, NULL_MESSAGE_TYPE_ID);
-                null_message.setSendingLP(getId());
-                null_message.setReceivingLP(target_lp);
-
-                all_lps[target_lp]->enqueueEvent(null_message);
+                all_lps[target_lp]->updateInputChannel(getId(), safe_time);
                 null_messages_sent_++;
             }
         }
     }
 
+    /**
+     * @brief Get the Earliest null message timestamp for this LP
+     * 
+     * @return double the earliest timestamp
+     */
     double getEarliestInputTime() const
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         double earliest = std::numeric_limits<double>::infinity();
         for (const auto& [lp_id, time] : input_times_)
         {
@@ -123,6 +130,11 @@ public:
         return earliest;
     }
 
+    /**
+     * @brief Get the Lookahead
+     * 
+     * @return double lookahead
+     */
     double getLookahead() const
     {
         if (dynamic_lookahead_)
@@ -132,24 +144,56 @@ public:
         return lookahead_;
     }
 
-    void setInputChannels(const std::vector<uint32_t>& input_lps)
+    /**
+     * @brief Set the Input Channels
+     * 
+     * It is used at initialization but can also be used for updating null messages times
+     * for all lp's at once
+     * 
+     * @param input_lps 
+     */
+    void setInputChannels(const std::vector<std::pair<uint32_t, double>>& input_lps)
+    {
+        for (const auto& [lp_id, earliest_event] : input_lps)
+        {
+            input_times_[lp_id] = earliest_event;
+        }
+    }
+
+    /**
+     * @brief sets the null message channel from a determined lp
+     * 
+     * @param lp_id lp that sent the null message
+     * @param time timestamp of the null message
+     */
+    void updateInputChannel(const uint32_t& lp_id, const double& time )
     {
         std::lock_guard<std::mutex> lock(mutex_);
-        for (uint32_t lp_id : input_lps)
-        {
-            input_times_[lp_id] = std::numeric_limits<double>::infinity();
-        }
+        input_times_[lp_id] = time;
+    }
+
+    /**
+     * @brief Set the Last Null Message Time
+     * 
+     * @param time 
+     */
+    void setLastNullMessageTime(const double& time)
+    {
+        last_null_messages_time_ = time;
     }
 
     uint32_t getProcessedEvents() const
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         return processed_events_;
+    }
+
+    uint32_t getGeneratedEvents() const
+    {
+        return generated_events_;
     }
 
     uint32_t getNullMessagesSent() const
     {
-        std::lock_guard<std::mutex> lock(mutex_);
         return null_messages_sent_;
     }
 
@@ -192,12 +236,15 @@ void NullMessagesEngine::initialize()
 
     for (uint32_t i = 0; i < logical_processes_.size(); ++i)
     {
-        std::vector<uint32_t> input_lps;
+        std::vector<std::pair<uint32_t, double>>input_lps;
         for (uint32_t j = 0; j < logical_processes_.size(); ++j)
         {
             if (i != j)
             {
-                input_lps.push_back(j);
+                uint32_t lp_id = j;
+                double earliest_event = logical_processes_[j]->peekNextEventTime();
+                logical_processes_[j]->setLastNullMessageTime(earliest_event);
+                input_lps.push_back(std::make_pair(lp_id, earliest_event));
             }
         }
         static_cast<NullMessagesLP*>(logical_processes_[i].get())->setInputChannels(input_lps);
@@ -230,7 +277,7 @@ SimulationStats NullMessagesEngine::run()
             for (auto lp : my_lps)
             {
                 double safe_time = lp->getEarliestInputTime();
-
+                
                 while (lp->peekNextEventTime() < safe_time)
                 {
                     if (lp->processNextEvent())
@@ -266,12 +313,14 @@ SimulationStats NullMessagesEngine::run()
             bool terminate = true;
             for (const auto& lp : logical_processes_)
             {
-                if (lp->getLocalVirtualTime() < config_.end_time || lp->getEventQueueSize() > 0)
+                if (lp->getLocalVirtualTime() < config_.end_time && lp->getEventQueueSize() > 0)
                 {
                     terminate = false;
                     break;
                 }
             }
+
+            pthread_barrier_wait(&barrier);
 
             if (terminate|| (all_empty && !processed))
             {
@@ -279,7 +328,6 @@ SimulationStats NullMessagesEngine::run()
             }
             pthread_barrier_wait(&barrier);
 
-           
         }
     };
 
@@ -307,6 +355,7 @@ SimulationStats NullMessagesEngine::run()
     stats_.simulation_time = max_time;
     stats_.wall_clock_time = elapsed.count();
     stats_.total_events_processed = 0;
+    stats_.total_events_generated = 0;
     stats_.total_null_messages = 0;
     stats_.events_processed_per_lp.resize(logical_processes_.size());
     stats_.null_messages_per_lp.resize(logical_processes_.size());
@@ -317,6 +366,7 @@ SimulationStats NullMessagesEngine::run()
         stats_.events_processed_per_lp[i] = lp->getProcessedEvents();
         stats_.null_messages_per_lp[i] = lp->getNullMessagesSent();
         stats_.total_events_processed += lp->getProcessedEvents();
+        stats_.total_events_generated += lp->getGeneratedEvents();
         stats_.total_null_messages += lp->getNullMessagesSent();
     }
 
@@ -335,9 +385,4 @@ double NullMessagesEngine::getCurrentTime() const
     return min_time;
 }
 
-void NullMessagesEngine::sendNullMessages(uint32_t lp_id)
-{
-    auto lp = static_cast<NullMessagesLP*>(logical_processes_[lp_id].get());
-    lp->sendNullMessages(reinterpret_cast<std::vector<NullMessagesLP*>&>(logical_processes_));
-}
 }

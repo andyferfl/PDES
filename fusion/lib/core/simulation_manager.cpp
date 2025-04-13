@@ -118,6 +118,86 @@ SimulationEngine* SimulationManager::getEngine() const
 
 bool SimulationManager::saveStatisticsToFile(const std::string& filename, const SimulationStats& stats) const
 {
+    std::ofstream file(filename);
+
+    if (!file.is_open())
+    {
+        return false;
+    }
+    
+    file << "Simulation Statistics\n";
+    file << "====================\n\n";
+    
+    file << "Algorithm: " << algorithmToString(config_.algorithm) << "\n";
+    file << "Threads: " << config_.num_threads << "\n";
+    file << "Logical Processes: " << config_.num_logical_processes << "\n\n";
+    
+    file << "Simulation Time: " << stats.simulation_time << "\n";
+    file << "Execution Time: " << stats.wall_clock_time << " seconds\n";
+    file << "Events Processed: " << stats.total_events_processed << "\n";
+    file << "Events Generated: " << stats.total_events_generated << "\n";
+    file << "Efficiency: " << stats.efficiency << " events/second\n\n";
+    
+    if (config_.algorithm == SimulationAlgorithm::WINDOW_RACER || 
+        config_.algorithm == SimulationAlgorithm::TIME_WARP)
+    {
+        file << "Rollbacks: " << stats.total_rollbacks << "\n";
+    }
+    
+    if (config_.algorithm == SimulationAlgorithm::NULL_MESSAGES)
+    {
+        file << "Null Messages: " << stats.total_null_messages << "\n";
+    }
+    
+    if (config_.collect_detailed_stats)
+    {
+        file << "\nDetailed Statistics\n";
+        file << "===================\n\n";
+        
+        file << "Events Processed Per LP:\n";
+        for (size_t i = 0; i < stats.events_processed_per_lp.size(); ++i)
+        {
+            file << "  LP " << i << ": " << stats.events_processed_per_lp[i] << "\n";
+        }
+        
+        if (config_.algorithm == SimulationAlgorithm::WINDOW_RACER || 
+            config_.algorithm == SimulationAlgorithm::TIME_WARP)
+        {
+            file << "\nRollbacks Per LP:\n";
+            for (size_t i = 0; i < stats.rollbacks_per_lp.size(); ++i) {
+                file << "  LP " << i << ": " << stats.rollbacks_per_lp[i] << "\n";
+            }
+        }
+        
+        if (config_.algorithm == SimulationAlgorithm::NULL_MESSAGES)
+        {
+            file << "\nNull Messages Per LP:\n";
+            for (size_t i = 0; i < stats.null_messages_per_lp.size(); ++i)
+            {
+                file << "  LP " << i << ": " << stats.null_messages_per_lp[i] << "\n";
+            }
+        }
+        
+        if (config_.algorithm == SimulationAlgorithm::WINDOW_RACER && 
+            !stats.window_racer.window_sizes.empty())
+        {
+            file << "\nWindow Sizes:\n";
+            for (size_t i = 0; i < stats.window_racer.window_sizes.size(); ++i)
+            {
+                file << "  Window " << i << ": " << stats.window_racer.window_sizes[i] << "\n";
+            }
+            file << "Immediate Rollbacks: " << stats.window_racer.immediate_rollbacks << "\n";
+            file << "Window End Rollbacks: " << stats.window_racer.window_end_rollbacks << "\n";
+        }
+        
+        if (config_.algorithm == SimulationAlgorithm::TIME_WARP)
+        {
+            file << "\nGVT Calculations: " << stats.time_warp.gvt_calculations << "\n";
+            file << "Fossil Collections: " << stats.time_warp.fossil_collections << "\n";
+            file << "Anti-Messages: " << stats.time_warp.anti_messages << "\n";
+        }
+
+    }
     return true;
 }
 
@@ -131,7 +211,7 @@ void SimulationManager::printStatistics(const SimulationStats& stats) const
     std::cout << "LPs: " << config_.num_logical_processes << "\n\n";
 
     std::cout << "Simulation time: " << stats.simulation_time << "\n";
-    std::cout << "Wall Clock Time: " << stats.wall_clock_time << " seconds\n";
+    std::cout << "Execution Time: " << stats.wall_clock_time << " seconds\n";
     std::cout << "Events processed: " << stats.total_events_processed << "\n";
     std::cout << "Event generated: " << stats.total_events_generated << "\n";
     std::cout << "Efficiency: " << stats.efficiency << " events/second\n";

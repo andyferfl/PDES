@@ -16,6 +16,8 @@ void LogicalProcess::addEntity(std::shared_ptr<Entity> entity)
 {
     entity->setLogicalProcess(id_);
     entities_[entity->getId()] = entity;
+    
+    entities_lp_[entity->getId()] = id_;
 }
 
 std::shared_ptr<Entity> LogicalProcess::getEntity(uint64_t entity_id) const
@@ -66,6 +68,11 @@ size_t LogicalProcess::getEventQueueSize() const
 {
     std::lock_guard<std::mutex> lock(mutex_);
     return event_queue_.size();
+}
+
+uint32_t LogicalProcess::getEntityLP(uint64_t entity_id) const
+{
+    return entities_lp_[entity_id];
 }
 
 double LogicalProcess::peekNextEventTime() const
