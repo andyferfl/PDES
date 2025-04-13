@@ -59,12 +59,12 @@ void runPHoldBenchmark()
         config_list.push_back(manager.getConfig());
     }
         
-    /* Run with Null Message algorithm
+    // Run with Null Message algorithm
     {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
-               .setThreadCount(20)
-               .setLogicalProcessCount(100)
+               .setThreadCount(2)
+               .setLogicalProcessCount(10)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -74,14 +74,14 @@ void runPHoldBenchmark()
             manager.registerEntity(entity);
         }
         
-        std::cout << "Running Null Message PDES...\n";
+        std::cout << "Running Null Messages PDES...\n";
         auto stats = manager.run();
         manager.printStatistics(stats);
         std::cout << "\n";
-        
+        manager.saveStatisticsToFile("output.txt", stats);        
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
-    }*/
+    }
     
 }
 
