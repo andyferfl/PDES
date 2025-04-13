@@ -101,6 +101,14 @@ public:
     size_t getEventQueueSize() const;
 
     /**
+     * @brief Get the LP that an entity is in
+     * 
+     * @param entity_id entity id
+     * @return uint32_t Lp id
+     */
+    uint32_t getEntityLP(uint64_t entity_id) const;
+
+    /**
      * @brief  Get the next event time without removing it
      * 
      * @return double Timestamp of the next event, or infinity if queue is empty
@@ -124,10 +132,13 @@ protected:
     std::priority_queue<Event, std::vector<Event>, EventComparator> event_queue_;   // Queue of pending events
     std::unordered_map<uint64_t, std::shared_ptr<Entity>> entities_;                // Entities managed by this LP
     std::atomic<double> local_virtual_time_;                                        // Current simulation time for this LP
-    mutable std::mutex mutex_;                                                              // Mutex for thread-safe access
+
+    mutable std::mutex mutex_;                                                      // Mutex for thread-safe access
+    inline static std::unordered_map<uint64_t, uint32_t> entities_lp_;
 
     // Statistics
     size_t processed_events_ = 0;
+    size_t generated_events_ = 0;
     size_t rollbacks_ = 0;
 };
 
