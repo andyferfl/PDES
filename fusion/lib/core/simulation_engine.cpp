@@ -1,6 +1,7 @@
 #include "core/simulation_engine.hpp"
 #include "algorithms/sequential_engine.hpp"
 #include "algorithms/null_messages_engine.hpp"
+#include "algorithms/time_warp_engine.hpp"
 
 #include <iostream>
 
@@ -25,7 +26,7 @@ std::unique_ptr<SimulationEngine> SimulationEngine::create(const SimulationConfi
     case SimulationAlgorithm::WINDOW_RACER:
         //return std::make_unique<SequentialEngine>(config);
     case SimulationAlgorithm::TIME_WARP:
-        //return std::make_unique<SequentialEngine>(config);
+        return std::make_unique<TimeWarpEngine>(config);
     case SimulationAlgorithm::NULL_MESSAGES:
         return std::make_unique<NullMessagesEngine>(config);
     default:

@@ -22,7 +22,7 @@ enum class SimulationAlgorithm
     SEQUENTIAL,     // Sequential DES algorithm
     WINDOW_RACER,   // Window racer algorithm
     TIME_WARP,      // Time Warp algorithm
-    NULL_MESSAGES    // Null messages algorithm
+    NULL_MESSAGES   // Null messages algorithm
 };
 
 struct SimulationConfig
@@ -31,7 +31,7 @@ struct SimulationConfig
     uint32_t num_threads = 1;
     uint32_t num_logical_processes = 1;
     double end_time = 1000.0;
-    bool collect_detailed_stats = false;
+    bool collect_detailed_stats = false; 
     
     struct
     {
@@ -42,7 +42,7 @@ struct SimulationConfig
 
     struct
     {
-        double gvt_interval = 1000;
+        double gvt_interval = 10;
         bool lazy_cancellation = false;
         int max_states_saved = 10;
     } time_warp;

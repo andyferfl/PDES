@@ -64,7 +64,7 @@ public:
      * @param event Event to enqueue
      */
     void enqueueEvent(const Event& event);
-
+    
     /**
      * @brief Get the Local Virtual Time (LVT) of this LP
      * 
