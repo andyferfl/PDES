@@ -18,7 +18,7 @@ public:
     SimulationManager& setLogicalProcessCount(uint32_t num_lps);
     SimulationManager& setEndTime(double end_time);
     SimulationManager& setDetailedStats(bool enable);
-    SimulationManager& configureWindowRacer(double initial_window_size = 1e-4, double window_growth_factor = 100.0, int max_states_saved = 10);
+    SimulationManager& configureWindowRacer(int num_entities, double initial_window_size = 1e-4, double window_growth_factor = 100.0, int max_states_saved = 10);
     SimulationManager& configureTimeWarp(int gvt_interval = 1000, bool lazy_cancellation = false, int max_states_saved = 10);
     SimulationManager& configureNullMessages(double lookahead = 0.1, bool dynamic_lookahead = false);
     SimulationManager& registerEntity(std::shared_ptr<Entity> entity);

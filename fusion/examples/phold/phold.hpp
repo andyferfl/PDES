@@ -26,8 +26,8 @@ public:
 
     std::vector<Event> initialize() override;
     std::vector<Event> handleEvent(const Event& event, double current_time) override;
-    std::any saveState(double time) override;
-    void restoreState(const std::any& state, double time) override;
+    PHoldEntity& saveState(double time) override;
+    void restoreState(const PHoldEntity& state, double time);
 
 private:
     uint64_t num_entities_;

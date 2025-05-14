@@ -14,8 +14,15 @@ SimulationManager& SimulationManager::setAlgorithm(SimulationAlgorithm algorithm
 }
 
 SimulationManager& SimulationManager::setThreadCount(uint32_t num_threads)
-{
+{  
     config_.num_threads = num_threads;
+    unsigned int max_threads = std::thread::hardware_concurrency();
+    if (num_threads > max_threads)
+    {
+        std::cout << "more threads (" << num_threads << ") requested than hardware provides ("<< max_threads << ")\n";
+        std::cout << "using " << max_threads << "threads\n";
+        config_.num_threads = max_threads;
+    }
     return *this;
 }
 
@@ -37,11 +44,12 @@ SimulationManager& SimulationManager::setDetailedStats(bool enable)
     return *this;
 }
 
-SimulationManager& SimulationManager::configureWindowRacer(double initial_window_size, double window_growth_factor, int max_states_saved)
+SimulationManager& SimulationManager::configureWindowRacer(int num_entities, double initial_window_size, double window_growth_factor, int max_states_saved)
 {
     config_.window_racer.initial_window_size = initial_window_size;
     config_.window_racer.window_growth_factor = window_growth_factor;
     config_.window_racer.max_states_saved = max_states_saved;
+    config_.window_racer.num_entities = num_entities;
     return *this;
 }
 

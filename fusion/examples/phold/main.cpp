@@ -21,7 +21,7 @@ void runPHoldBenchmark()
     const double lookahead = 0.1;
     const double mean_delay = 1.0;
     const uint32_t initial_events = 10;
-    const double end_time = 100.0;
+    const double end_time = 1000.0;
     const uint64_t seed = 12345;
     
     // Create entities
@@ -54,7 +54,7 @@ void runPHoldBenchmark()
         auto stats = manager.run();
         manager.printStatistics(stats);
         std::cout << "\n";
-        
+        manager.saveStatisticsToFile("des.txt", stats);        
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }
@@ -64,7 +64,7 @@ void runPHoldBenchmark()
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
                .setThreadCount(2)
-               .setLogicalProcessCount(10)
+               .setLogicalProcessCount(32)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -78,7 +78,30 @@ void runPHoldBenchmark()
         auto stats = manager.run();
         manager.printStatistics(stats);
         std::cout << "\n";
-        manager.saveStatisticsToFile("output.txt", stats);        
+        manager.saveStatisticsToFile("nm.txt", stats);
+        stats_list.push_back(stats);
+        config_list.push_back(manager.getConfig());
+    }
+
+    // Run with Window racer algorithm
+    {
+        SimulationManager manager;
+        manager.setAlgorithm(SimulationAlgorithm::WINDOW_RACER)
+               .setThreadCount(2)
+               .setEndTime(end_time)
+               .setDetailedStats(true)
+               .configureWindowRacer(num_entities);
+        
+        for (const auto& entity : entities)
+        {
+            manager.registerEntity(entity);
+        }
+        
+        std::cout << "Running Window Racer PDES...\n";
+        auto stats = manager.run();
+        manager.printStatistics(stats);
+        std::cout << "\n";
+        manager.saveStatisticsToFile("wr.txt", stats);
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }

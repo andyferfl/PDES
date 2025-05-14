@@ -77,26 +77,14 @@ std::vector<Event> PHoldEntity::handleEvent(const Event& event, double current_t
     return new_events;
 }
 
-std::any PHoldEntity::saveState(double time)
+PHoldEntity& PHoldEntity::saveState(double time)
 {
-    PHoldEntityState state;
-    state.events_processed = events_processed_;
-    state.events_generated = events_generated_;
-    return state;
+    return *this;
 }
 
-void PHoldEntity::restoreState(const std::any& state, double time)
+void PHoldEntity::restoreState(const PHoldEntity& state, double time)
 {
-    try
-    {
-        const PHoldEntityState& saved_state = std::any_cast<const PHoldEntityState&>(state);
-        events_processed_ = saved_state.events_processed;
-        events_generated_ = saved_state.events_generated;
-    }
-    catch (const std::bad_any_cast& e)
-    {
-        // Handle error
-    }
+    *this = state;
 }
 
 Event PHoldEntity::generateEvent(double current_time)

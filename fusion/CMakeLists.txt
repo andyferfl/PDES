@@ -27,6 +27,7 @@ set(CORE_SOURCES
 set(ALGORITHM_SOURCES
     lib/algorithms/sequential_engine.cpp
     lib/algorithms/null_messages_engine.cpp
+    lib/algorithms/window_racer_engine.cpp
 )
 
 add_library(fusion SHARED
