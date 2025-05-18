@@ -39,7 +39,7 @@ void runPHoldBenchmark()
     std::vector<SimulationConfig> config_list;
     
     // Run with sequential algorithm
-    {
+    /*{
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::SEQUENTIAL)
                .setEndTime(end_time)
@@ -81,7 +81,7 @@ void runPHoldBenchmark()
         manager.saveStatisticsToFile("nm.txt", stats);
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
-    }
+    }*/
 
     // Run with Window racer algorithm
     {
@@ -90,7 +90,7 @@ void runPHoldBenchmark()
                .setThreadCount(2)
                .setEndTime(end_time)
                .setDetailedStats(true)
-               .configureWindowRacer(num_entities);
+               .configureWindowRacer(num_entities,1.0,150.0,20);
         
         for (const auto& entity : entities)
         {

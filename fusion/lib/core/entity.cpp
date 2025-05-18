@@ -23,6 +23,11 @@ uint64_t Entity::getMaxNumSavedStates() const
     return max_num_prev_states_;
 }
 
+void Entity::setMaxNumSavedStates(const uint64_t saved_states)
+{
+    max_num_prev_states_ = saved_states;
+}
+
 void Entity::setNumSavedStates(const uint64_t saved_states)
 {
     num_saved_states_ = saved_states;

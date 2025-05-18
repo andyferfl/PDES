@@ -50,6 +50,8 @@ public:
      */
     uint64_t getMaxNumSavedStates() const;
 
+    void setMaxNumSavedStates(const uint64_t saved_states);
+
     /**
      * @brief Get the Number of Saved States in this entity
      * 
