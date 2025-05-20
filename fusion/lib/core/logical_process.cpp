@@ -2,10 +2,17 @@
 
 namespace fusion
 {
+// LogicalProcess::LogicalProcess(uint32_t id)
+//     : id_(id)
+// {
+// }
+
 LogicalProcess::LogicalProcess(uint32_t id)
-    : id_(id)
+    : id_(id),
+      local_virtual_time_(0.0)
 {
 }
+
 
 uint32_t LogicalProcess::getId() const
 {

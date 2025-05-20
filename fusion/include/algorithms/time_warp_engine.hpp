@@ -51,56 +51,36 @@ public:
      * @return double The current simulation time
      */
     double getCurrentTime() const override;
-    uint32_t getNumLogicalProcesses() const { return logical_processes_.size(); }
-    uint32_t getAssignedLpForEntity(uint64_t entity_id) const {
-        auto it = entity_to_lp_.find(entity_id);
-        if (it != entity_to_lp_.end()) {
-            return it->second;
-        }
-        throw std::runtime_error("Entity not registered");
-    }
-
+    uint32_t getAssignedLpForEntity(uint64_t entity_id); 
+    
 private:
     //class TimeWarpLP;
     class TimeWarpLP : public LogicalProcess {
         public:
             TimeWarpLP(uint32_t id, uint32_t max_states_saved, bool lazy_cancellation, TimeWarpEngine* engine);
-            void scheduleEvent(const Event& event) {
-                event_queue_.push(event);
-            }
-            
-            bool eventQueueEmpty() const {
-                return event_queue_.empty();
-            }
-            
-            double peekNextEventTime() const {
-                return event_queue_.empty() ? std::numeric_limits<double>::infinity() 
-                                          : event_queue_.top().getTimestamp();
-            }
-            const auto& getPendingRemoteEvents() const { return pending_remote_events_; }
-            size_t getEventQueueSize() const { 
-                std::lock_guard<std::mutex> lock(queue_mutex_);
-                return event_queue_.size(); 
-            }
 
             void dumpEventQueue();
+
+            void scheduleEvent(const Event& event);
             
+            void setEngine(TimeWarpEngine* engine) {
+                engine_ = engine;
+            }
+
             bool processNextEvent() override;
-            void deliverRemoteEvents(std::vector<TimeWarpLP*>& all_lps);  // Add this
+            void deliverRemoteEvents(std::vector<TimeWarpLP*>& all_lps);  
             void rollback(double rollback_time);
             void cancelEvent(const Event& anti_message);
             void saveEntityState(std::shared_ptr<Entity> entity, double time);
             void fossilCollect(double gvt);
             
-            uint32_t getProcessedEvents() const;  // Add these getters
+            uint32_t getProcessedEvents() const;
             uint32_t getRollbacks() const;
             uint32_t getGeneratedEvents() const;
-            bool shouldProcessLocally(uint64_t entity_id) const {
-                return getEntities().count(entity_id) > 0;
-            }
-            
-            
-            
+            bool eventQueueEmpty() const;
+            double peekNextEventTime() const;
+            const auto& getPendingRemoteEvents() const;
+            size_t getEventQueueSize() const;
         
         private:
             TimeWarpEngine* engine_;  
@@ -109,7 +89,6 @@ private:
 
             uint32_t max_states_saved_;
             bool lazy_cancellation_;
-            // std::atomic<double> local_virtual_time_{0.0};  
             std::priority_queue<Event, std::vector<Event>, EventComparator> event_queue_;
             std::map<double, std::map<uint32_t, std::any>> saved_states_;
             std::vector<Event> processed_event_history_;
@@ -120,17 +99,7 @@ private:
 
         
     };
-    std::vector<uint64_t> getAllEntityIds() const;
-    uint32_t getLpForEntity(uint64_t entity_id) const {
-        auto it = entity_to_lp_.find(entity_id);
-        if (it != entity_to_lp_.end()) {
-            return it->second;
-        }
-        throw std::runtime_error("Entity " + std::to_string(entity_id) + " not found in any LP");
-    }
-    uint32_t getTargetLpForEntity(uint64_t entity_id, uint32_t total_lps) const {
-        return entity_id % total_lps; // Тот же алгоритм, что и в registerEntity
-    }
+    
     struct EntityInfo {
         uint32_t lp_id;
         std::shared_ptr<Entity> entity;

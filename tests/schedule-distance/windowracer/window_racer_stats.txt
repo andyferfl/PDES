@@ -2,21 +2,21 @@
 
   num_windows: 10
 
-  mean initial window size: 162
+  mean initial window size: 80.2
 
-  mean final window size: 1.85
+  mean final window size: 0.898
 
-  mean final/initial window size: 0.309
+  mean final/initial window size: 0.307
 
-  num handle calls: 186
+  num handle calls: 1.47e+03
 
-  event rollbacks/handle: 0.505
+  event rollbacks/handle: 0.209
 
-  entity rollbacks/handle: 0.237
+  entity rollbacks/handle: 0.179
 
-  mean rollback length: 2.14
+  mean rollback length: 1.17
 
-  proportion remote handle calls: 0.333
+  proportion remote handle calls: 0.0897
 
   proportion instantaneous events among all handle_() calls: 0
 
@@ -24,48 +24,66 @@
 
   MEANS ACROSS THREADS:
     stats_num_ent_rollbacks_immediate: 11
-    stats_num_ev_rollbacks_immediate: 23
-    stats_num_ent_rollbacks_at_window_end: 11
-    stats_num_ev_rollbacks_at_window_end: 24
-    stats_num_handle_calls: 93
-    stats_num_remote_handle_calls: 31
+    stats_num_ev_rollbacks_immediate: 14
+    stats_num_ent_rollbacks_at_window_end: 55
+    stats_num_ev_rollbacks_at_window_end: 63
+    stats_num_handle_calls: 368
+    stats_num_remote_handle_calls: 33
 
   PER-THREAD:
     stats_num_ent_rollbacks_immediate:
-        0: 11
-        1: 12
+        0: 5
+        1: 22
+        2: 11
+        3: 14
 
     stats_num_ev_rollbacks_immediate:
-        0: 20
-        1: 26
+        0: 5
+        1: 24
+        2: 13
+        3: 16
 
     stats_num_ent_rollbacks_at_window_end:
-        0: 11
-        1: 12
+        0: 108
+        1: 32
+        2: 37
+        3: 44
 
     stats_num_ev_rollbacks_at_window_end:
-        0: 25
-        1: 25
+        0: 132
+        1: 38
+        2: 38
+        3: 49
 
     stats_num_handle_calls:
-        0: 95
-        1: 92
+        0: 507
+        1: 329
+        2: 322
+        3: 322
 
     stats_num_remote_handle_calls:
-        0: 37
-        1: 26
+        0: 96
+        1: 19
+        2: 11
+        3: 14
 
     stats_max_queue_size:
-        0: 7
-        1: 8
+        0: 71
+        1: 73
+        2: 68
+        3: 70
 
     stats_max_new_ev_queue_size:
-        0: 7
-        1: 7
+        0: 60
+        1: 56
+        2: 50
+        3: 48
 
     stats_num_instantaneous_events:
         0: 0
         1: 0
+        2: 0
+        3: 0
 
 
-  initial and final window sizes: (0.0001, 0.0001) (0.01, 0.01) (1, 1) (100, 2.7375) (273.75, 3.5695) (356.95, 1.747) (174.7, 2.1738) (217.38, 2.3108) (231.08, 2.6303) (263.03, 2.2988) 
+  initial and final window sizes: (0.0001, 0.0001) (0.01, 0.01) (1, 1) (100, 1.149) (114.9, 1.1752) (117.52, 1.2648) (126.48, 1.0266) (102.66, 1.1571) (115.71, 1.2384) (123.84, 0.96143) 

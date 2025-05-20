@@ -63,11 +63,11 @@ void ProcessEvent(int me, simtime_t now, int event_type, event_content_type *eve
             }
 
             // Simulate calculations made by event
-           /* for (int i = 0; i <= 1; i++) //1000000000 10000
+            for (int i = 0; i <= 1000000; i++) //1000000000 10000
             {
                 continue;
             }
-            */
+            
             // Schedule event
             ScheduleNewEvent(dst_id, timestamp, LOOP, NULL, 0);
             break;

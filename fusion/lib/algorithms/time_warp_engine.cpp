@@ -21,6 +21,7 @@ namespace fusion {
       lazy_cancellation_(lazy_cancellation),
       engine_(engine)  {}
 
+    
     bool TimeWarpEngine::TimeWarpLP::processNextEvent() {
         try {
             std::unique_lock<std::mutex> lock(queue_mutex_);
@@ -28,16 +29,11 @@ namespace fusion {
                 return false;
             }
 
-            Event event = event_queue_.top(); // Используем конструктор копирования
+            Event event = event_queue_.top(); 
             event_queue_.pop();
             lock.unlock();
 
             if (event.isAntiMessage()) {
-                // std::cout << "Processing anti-message for event: " 
-                //   << "Time=" << event.getTimestamp() 
-                //   << ", Src=" << event.getSourceId()
-                //   << ", Tgt=" << event.getTargetId() << "\n";
-
                 cancelEvent(event);
                 return true;
             }
@@ -51,6 +47,8 @@ namespace fusion {
             // 1. Проверка временной метки
             if (event.getTimestamp() < getLocalVirtualTime()) {
                 rollback(event.getTimestamp());
+                std::lock_guard<std::mutex> relock(queue_mutex_);
+                event_queue_.push(event); // заново вставить событие
             }
 
             // 3. Обновление LVT
@@ -108,29 +106,28 @@ namespace fusion {
         }
     }
     
-    // Вынесенная функция дампа очереди
-    void TimeWarpEngine::TimeWarpLP::dumpEventQueue() {
-        std::ofstream dump("event_queue_dump_" + std::to_string(getId()) + ".txt");
-        auto temp_queue = event_queue_;
-        while (!temp_queue.empty()) {
-            auto e = temp_queue.top();
-            dump << "Time: " << e.getTimestamp() 
-                 << " | Type: " << e.getTypeId()
-                 << " | Src: " << e.getSourceId()
-                 << " | Dest: " << e.getTargetId() << "\n";
-            temp_queue.pop();
-        }
+// Вынесенная функция дампа очереди
+void TimeWarpEngine::TimeWarpLP::dumpEventQueue() {
+    std::ofstream dump("event_queue_dump_" + std::to_string(getId()) + ".txt");
+    auto temp_queue = event_queue_;
+    while (!temp_queue.empty()) {
+        auto e = temp_queue.top();
+        dump << "Time: " << e.getTimestamp() 
+                << " | Type: " << e.getTypeId()
+                << " | Src: " << e.getSourceId()
+                << " | Dest: " << e.getTargetId() << "\n";
+        temp_queue.pop();
     }
+}
 
-    std::vector<uint64_t> TimeWarpEngine::getAllEntityIds() const {
-        std::vector<uint64_t> ids;
-        for (const auto& lp : logical_processes_) {
-            for (const auto& [id, _] : lp->getEntities()) {
-                ids.push_back(id);
-            }
-        }
-        return ids;
+void TimeWarpEngine::TimeWarpLP::scheduleEvent(const Event& event) {
+    std::lock_guard<std::mutex> lock(queue_mutex_);
+    if (event_queue_.size() >= 100000) {
+        throw std::runtime_error("Event queue overflow");
     }
+    event_queue_.push(event);
+
+}
 
 void TimeWarpEngine::TimeWarpLP::deliverRemoteEvents(std::vector<TimeWarpLP*>& all_lps) {
     std::lock_guard<std::mutex> lock(pending_events_mutex_);
@@ -191,6 +188,7 @@ void TimeWarpEngine::TimeWarpLP::rollback(double rollback_time) {
                 anti_msg.setReceivingLP(sent_event.getReceivingLP());
 
                 pending_remote_events_[sent_event.getReceivingLP()].push_back(anti_msg);
+                engine_->stats_.time_warp.anti_messages++;   
             } else {
                 new_output_history.push_back(sent_event);
             }
@@ -304,7 +302,23 @@ uint32_t TimeWarpEngine::TimeWarpLP::getGeneratedEvents() const {
     return generated_events_;
 }
 
+bool TimeWarpEngine::TimeWarpLP::eventQueueEmpty() const {
+    return event_queue_.empty();
+}
 
+double TimeWarpEngine::TimeWarpLP::peekNextEventTime() const {
+    return event_queue_.empty() ? std::numeric_limits<double>::infinity() 
+                                : event_queue_.top().getTimestamp();
+}
+
+const auto& TimeWarpEngine::TimeWarpLP::getPendingRemoteEvents() const { 
+    return pending_remote_events_; 
+}
+
+size_t TimeWarpEngine::TimeWarpLP::getEventQueueSize() const { 
+    std::lock_guard<std::mutex> lock(queue_mutex_);
+    return event_queue_.size(); 
+}
 
 
 // TimeWarpEngine implementation
@@ -326,6 +340,10 @@ TimeWarpEngine::TimeWarpEngine(const SimulationConfig& config)
             config.time_warp.lazy_cancellation,
             this);
     }
+    for (auto& lp : logical_processes_) {
+        lp->setEngine(this);
+    }
+
 }
 
 void TimeWarpEngine::registerEntity(std::shared_ptr<Entity> entity) {
@@ -342,11 +360,13 @@ void TimeWarpEngine::registerEntity(std::shared_ptr<Entity> entity) {
 }
 
 void TimeWarpEngine::initialize() {
+    // srand(static_cast<unsigned>(time(nullptr)));
+
     if (logical_processes_.empty()) {
         throw std::runtime_error("No Logical Processes initialized");
     }
 
-    std::cout << "Initializing TimeWarp with " << logical_processes_.size() << " LPs\n";
+    // std::cout << "Initializing TimeWarp with " << logical_processes_.size() << " LPs\n";
 
     // 2. Инициализация LP и сущностей
     for (auto& lp : logical_processes_) {
@@ -360,6 +380,8 @@ void TimeWarpEngine::initialize() {
     }
 
     double base_time = 0.1;
+    std::cout << "Entities registered: " << entity_registry_.size() << std::endl;
+
     for (auto& [entity_id, info] : entity_registry_) {
         uint64_t sender_id = entity_id;
         uint64_t receiver_id;
@@ -399,7 +421,7 @@ SimulationStats TimeWarpEngine::run() {
         std::cout << "ERROR: Failed to open debug log file!" << std::endl;
         return {};
     }
-    std::cout << "Initial event counts per LP:\n";
+    // std::cout << "Initial event counts per LP:\n";
     for (auto& lp : logical_processes_) {
         debug_log << "LP " << lp->getId() << ": " 
                  << static_cast<TimeWarpLP*>(lp.get())->getEventQueueSize() 
@@ -410,7 +432,7 @@ SimulationStats TimeWarpEngine::run() {
     running_ = true;
     
     // Вывод конфигурации
-    std::cout << "Starting Time Warp with:\n"
+    debug_log << "Starting Time Warp with:\n"
               << "- Threads: " << config_.num_threads << "\n"
               << "- LPs: " << logical_processes_.size() << "\n"
               << "- GVT interval: " << config_.time_warp.gvt_interval << "\n"
@@ -469,9 +491,6 @@ SimulationStats TimeWarpEngine::run() {
 
             // Барьер 1: синхронизация перед доставкой сообщений
             pthread_barrier_wait(&barrier);
-            // std::cout << "Termination condition met:\n"
-            //         << "GVT = " << global_virtual_time_.load() 
-            //         << ", End Time = " << config_.end_time << "\n";
             // Проверка завершения
             if (global_virtual_time_.load() >= config_.end_time) {
                 std::cout << "Termination condition met:\n"
@@ -520,13 +539,15 @@ SimulationStats TimeWarpEngine::run() {
                     
                     double gvt = global_virtual_time_.load();
                     for (auto& lp : logical_processes_) {
+                        // std::cout << "fossilCollect" << std::endl;
                         static_cast<TimeWarpLP*>(lp.get())->fossilCollect(gvt);
                     }
+                    stats_.time_warp.fossil_collections++; 
                 }
-                
+
                 global_progress.store(false); // Сброс флага прогресса
             }
-
+            
             // Барьер 3: финальная синхронизация
             pthread_barrier_wait(&barrier);
         }
@@ -557,22 +578,17 @@ SimulationStats TimeWarpEngine::run() {
         double lvt = lp->getLocalVirtualTime();
         max_lvt = std::max(max_lvt, lvt);
         
-        // Проверяем завершение для каждого LP
         bool lp_completed = (lvt >= config_.end_time);
-        if (!lp_completed) {
-            auto* tw_lp = static_cast<TimeWarpLP*>(lp.get());
-            if (!tw_lp->eventQueueEmpty()) {
-                double next_event = tw_lp->peekNextEventTime();
-                if (next_event < config_.end_time) {
-                    lp_completed = false;
-                }
-            }
+        auto* tw_lp = static_cast<TimeWarpLP*>(lp.get());
+        if (!lp_completed && !tw_lp->eventQueueEmpty()) {
+            double next_event = tw_lp->peekNextEventTime();
+            lp_completed = next_event >= config_.end_time;
         }
-        all_completed = all_completed && lp_completed;  // Используем объявленную переменную
+        all_completed = all_completed && lp_completed;  
     }
 
     // Устанавливаем время симуляции
-    stats_.simulation_time = all_completed ? config_.end_time : max_lvt;
+    // stats_.simulation_time = all_completed ? config_.end_time : max_lvt;
     // Сбор статистики
     stats_.simulation_time = global_virtual_time_.load();
     stats_.wall_clock_time = elapsed.count();
@@ -589,15 +605,13 @@ SimulationStats TimeWarpEngine::run() {
     
     for (size_t i = 0; i < logical_processes_.size(); ++i) {
         auto lp = static_cast<TimeWarpLP*>(logical_processes_[i].get());
-        stats_.events_processed_per_lp.push_back(lp->getProcessedEvents());
-        stats_.rollbacks_per_lp.push_back(lp->getRollbacks());
+        // stats_.events_processed_per_lp.push_back(lp->getProcessedEvents());
+        // stats_.rollbacks_per_lp.push_back(lp->getRollbacks());
+        stats_.events_processed_per_lp[i] = lp->getProcessedEvents();
+        stats_.rollbacks_per_lp[i] = lp->getRollbacks();
         stats_.total_events_processed += lp->getProcessedEvents();
         stats_.total_rollbacks += lp->getRollbacks();
         stats_.total_events_generated += lp->getGeneratedEvents();
-        
-        // std::cout << "LP " << i << ": events=" << lp->getProcessedEvents()
-        //           << ", rollbacks=" << lp->getRollbacks()
-        //           << ", final LVT=" << lp->getLocalVirtualTime() << "\n";
                   
         debug_log << "LP " << i << ": events=" << lp->getProcessedEvents()
                   << ", rollbacks=" << lp->getRollbacks()
@@ -607,13 +621,7 @@ SimulationStats TimeWarpEngine::run() {
     stats_.efficiency = (stats_.wall_clock_time > 0) ? 
         stats_.total_events_processed / stats_.wall_clock_time : 0;
     
-        
-    // std::cout << "Total events: " << stats_.total_events_processed << "\n"
-    //           << "Total rollbacks: " << stats_.total_rollbacks << "\n"
-    //           << "GVT: " << global_virtual_time_.load() << "\n"
-    //           << "Wall clock time: " << stats_.wall_clock_time << "s\n"
-    //           << "Efficiency: " << stats_.efficiency << " events/s\n";
-    std::cout << "\n=== Simulation Results ===\n"
+    debug_log << "\n=== Simulation Results ===\n"
           << "Requested end time: " << config_.end_time << "\n"
           << (all_completed ? "All LPs completed successfully" 
                            : "Simulation stopped early") << "\n"
@@ -631,14 +639,23 @@ double TimeWarpEngine::getCurrentTime() const {
     return global_virtual_time_.load();
 }
 
+uint32_t TimeWarpEngine::getAssignedLpForEntity(uint64_t entity_id)  {
+    auto it = entity_to_lp_.find(entity_id);
+    if (it != entity_to_lp_.end()) {
+        return it->second;
+    }
+    throw std::runtime_error("Entity not registered");
+}
+
 void TimeWarpEngine::calculateGVT() {
 
     double min_time = std::numeric_limits<double>::max();
     
     // 1. Найти минимальное LVT среди всех LP
     for (const auto& lp : logical_processes_) {
-        min_time = std::min(min_time, 
-                          static_cast<TimeWarpLP*>(lp.get())->getLocalVirtualTime());
+        double lvt = static_cast<TimeWarpLP*>(lp.get())->getLocalVirtualTime();
+        // std::cout << "[GVT] LP LVT: " << lvt << std::endl;
+        min_time = std::min(min_time, lvt);
     }
     
     // 2. Учесть pending remote events
@@ -646,14 +663,20 @@ void TimeWarpEngine::calculateGVT() {
         auto events = static_cast<TimeWarpLP*>(lp.get())->getPendingRemoteEvents();
         for (const auto& [_, ev_list] : events) {
             for (const auto& ev : ev_list) {
-                min_time = std::min(min_time, ev.getTimestamp());
+                double ts = ev.getTimestamp();
+                // std::cout << "[GVT] Pending event ts: " << ts << std::endl;
+                min_time = std::min(min_time, ts);
+
             }
         }
     }
-    
-    if (min_time > global_virtual_time_) {
-        global_virtual_time_ = min_time;
-    }
+    // std::cout << "[GVT] Calculated min_time: " << min_time << std::endl;
+
+    global_virtual_time_ = min_time;
+
+    // if (min_time > global_virtual_time_) {
+    //     global_virtual_time_ = min_time;
+    // }
 
     // 4. Check termination
     if (global_virtual_time_ >= config_.end_time) {

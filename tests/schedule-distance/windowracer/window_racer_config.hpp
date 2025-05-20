@@ -18,9 +18,9 @@ const int random_seed = 1;
 const bool set_affinity = true;
 const int cpu_stride = 1;
 
-const uint64_t num_threads = 2;
+const uint64_t num_threads = 4;
 
-const uint64_t num_entities = 10;
+const uint64_t num_entities = 256;
 
 const int phold_events_per_entity = 1;
 const double phold_lambda = 1;

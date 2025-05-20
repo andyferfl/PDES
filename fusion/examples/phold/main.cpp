@@ -18,10 +18,10 @@ void runPHoldBenchmark()
     const uint64_t num_entities = 1024;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
-    const double lookahead = 0.1;
+    const double lookahead = 10000;
     const double mean_delay = 1.0;
     const uint32_t initial_events = 10;
-    const double end_time = 100.0;
+    const double end_time = 10.0;
     const uint64_t seed = 12345;
     
     // Create entities
@@ -64,7 +64,7 @@ void runPHoldBenchmark()
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
                .setThreadCount(4)
-               .setLogicalProcessCount(128)
+               .setLogicalProcessCount(16)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -87,7 +87,7 @@ void runPHoldBenchmark()
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::TIME_WARP)
                .setThreadCount(4)
-               .setLogicalProcessCount(128)
+               .setLogicalProcessCount(16)
                .setEndTime(end_time)
                .setDetailedStats(true);
 

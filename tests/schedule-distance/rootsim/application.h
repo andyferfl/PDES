@@ -10,7 +10,7 @@ const double phold_lookahead = 1;
 const double phold_remote_ratio = 1;
 const double phold_zero_delay_ratio = 0;
 const int tau = 5;
-const simtime_t phold_gvt = 20.0f;
+const simtime_t phold_gvt = 10.0f;
 const unsigned ctp_root = 0;
 
 
