@@ -541,7 +541,7 @@ SimulationStats WindowRacerEngine::run()
             }
 
             //calculate new tau
-            tau = hindsight_optimal_tau > 0 ? hindsight_optimal_tau * config_.window_racer.window_growth_factor : config_.window_racer.window_growth_factor;
+            tau = hindsight_optimal_tau * config_.window_racer.window_growth_factor;
             pthread_barrier_wait(&barrier);
             std::cout<<"tid: "<<thread_id<<" finished commit "<<final_window_ub<<" calculated tau: "<<tau<<std::endl;
 
