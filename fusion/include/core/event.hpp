@@ -142,7 +142,7 @@ private:
     double creation_time_;  // When the event was created (simulation time)
     uint32_t sending_lp_;   // LP that sent this event
     uint32_t receiving_lp_; // LP that will receive the event
-    bool is_anti_message_;  // Whether this is an antimessage (Time Warp)
+    bool is_anti_message_ = false;  // Whether this is an antimessage (Time Warp)
 };
 
 

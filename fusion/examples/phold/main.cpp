@@ -18,6 +18,7 @@ void runPHoldBenchmark()
     const uint64_t num_entities = 10;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
+
     const double lookahead = 1.0;
     const double mean_delay = 1.0;
     const uint32_t initial_events = 1;
@@ -102,6 +103,29 @@ void runPHoldBenchmark()
         manager.printStatistics(stats);
         std::cout << "\n";
         manager.saveStatisticsToFile("wr.txt", stats);
+        stats_list.push_back(stats);
+        config_list.push_back(manager.getConfig());
+    }
+    // Run with TIME WARP algorithm
+    {
+        SimulationManager manager;
+        manager.setAlgorithm(SimulationAlgorithm::TIME_WARP)
+               .setThreadCount(4)
+               .setLogicalProcessCount(16)
+               .setEndTime(end_time)
+               .setDetailedStats(true);
+
+        for (const auto& entity : entities)
+        {
+            manager.registerEntity(entity);
+        }
+
+        std::cout << "Running Time Warp PDES...\n";
+        auto stats = manager.run();
+        manager.printStatistics(stats);
+        std::cout << "\n";
+        manager.saveStatisticsToFile("output.txt", stats);
+
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }
