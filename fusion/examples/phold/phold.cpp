@@ -1,6 +1,9 @@
 #include "phold.hpp"
 #include <algorithm>
 #include <cmath>
+// #include <stdexcept>  
+// #include <ostream>
+// #include <iostream>
 
 namespace fusion
 {
@@ -38,6 +41,17 @@ PHoldEntity::PHoldEntity(
         events_processed_(0),
         events_generated_(0)
 {
+    // if (mean_delay <= 0.0) {
+    //     throw std::runtime_error("mean_delay must be positive");
+    // }
+    // if (lookahead <= 0.0) {
+    //     throw std::runtime_error("lookahead must be positive");
+    // }
+    // if (num_entities == 0) {
+    //     throw std::runtime_error("num_entities cannot be zero");
+    // }
+
+
 }
 
 std::vector<Event> PHoldEntity::initialize()

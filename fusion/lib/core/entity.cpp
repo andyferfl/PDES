@@ -1,12 +1,20 @@
 #include "core/entity.hpp"
-
+#include <cstdint>
+#include <limits>
 namespace fusion
 {
 
+// Entity::Entity(uint64_t id)
+//     : id_(id)
+// {
+// }
+
 Entity::Entity(uint64_t id)
-    : id_(id)
+    : id_(id),
+      logical_process_(std::numeric_limits<uint32_t>::max())  // Инициализируем дефолтным значением
 {
 }
+
 
 uint64_t Entity::getId() const
 {

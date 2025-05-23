@@ -105,6 +105,29 @@ void runPHoldBenchmark()
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }
+    // Run with TIME WARP algorithm
+    {
+        SimulationManager manager;
+        manager.setAlgorithm(SimulationAlgorithm::TIME_WARP)
+               .setThreadCount(4)
+               .setLogicalProcessCount(16)
+               .setEndTime(end_time)
+               .setDetailedStats(true);
+
+        for (const auto& entity : entities)
+        {
+            manager.registerEntity(entity);
+        }
+
+        std::cout << "Running Time Warp PDES...\n";
+        auto stats = manager.run();
+        manager.printStatistics(stats);
+        std::cout << "\n";
+        manager.saveStatisticsToFile("output.txt", stats);
+
+        stats_list.push_back(stats);
+        config_list.push_back(manager.getConfig());
+    }
     
 }
 

@@ -46,6 +46,10 @@ public:
   }
 
   void handle(int tid, double ts) {
+    int j = 0;
+    for(int i = 0; i < 1000000; i++) {
+      j = i;
+		};
     schedule_event(tid, ts);
   }
 };
