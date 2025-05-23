@@ -74,6 +74,7 @@ public:
     void setNumSavedStates(uint64_t num_saved_states)
     {
         num_saved_states_ = num_saved_states;
+        entity_->setNumSavedStates(num_saved_states);
     }
 
     std::vector<Event>& getEventList()
@@ -105,22 +106,23 @@ public:
     {
         uint64_t saved_states = entity_->getNumSavedStates();
 
-        if (saved_states == entity_->getMaxNumSavedStates())
+        if (saved_states == max_saved_states_)
         {
             return false;
         }
 
         saved_states++;
 
-        try
-        {
+        /*try
+        {*/
             previous_states_[saved_states - 1] = std::make_pair(last_change_timestamp_, &entity_->saveState(last_change_timestamp_));
-        }
+        /*}
         catch(...)
         {
             return false;
-        }
+        }*/
         entity_->setNumSavedStates(saved_states);
+        num_saved_states_ = saved_states;
 
         return true;
     }
@@ -133,15 +135,15 @@ public:
 
         for (; previous_states_[i - 1].first >= ts > 0; i--)
         {
-            std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << std::endl;
+       //     std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << std::endl;
             rollbacks++;
         }
-        std::cout<< "rollback "<<i<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << " extra: "<< previous_states_[i-1].second->getNumSavedStates() << std::endl;
+     //   std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << " extra: "<< previous_states_[i-1].second->getNumSavedStates() << std::endl;
         std::shared_ptr<Entity> tmp(previous_states_[i-1].second, [](Entity*){/* no-op deleter */});
         entity_ = tmp;
-        entity_->setNumSavedStates(i);
+        entity_->setNumSavedStates(i-1);
+        num_saved_states_ = i-1;
         last_change_timestamp_ = previous_states_[i-1].first;
-        std::cout <<"entity: "<<entity_->getId()<< " rollback: "<<ts<<" from: "<<earliest_change_ts<<" to: "<<last_change_timestamp_<<std::endl;
         return rollbacks;
     }
 
@@ -151,12 +153,14 @@ public:
         uint64_t i = entity_->getNumSavedStates();
         for (; previous_states_[i - 1].first > ts; i--)
         {
+        //    std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << std::endl;
             earliest_change_ts = previous_states_[i - 1].first;
         }
-
+      //  std::cout<< "rollback "<<i<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << " extra: "<< previous_states_[i-1].second->getNumSavedStates() << std::endl;
         std::shared_ptr<Entity> tmp(previous_states_[i-1].second, [](Entity*){/* no-op deleter */});
         entity_ = tmp;
-        entity_->setNumSavedStates(i);
+        entity_->setNumSavedStates(i-1);
+        num_saved_states_ = i-1;
         last_change_timestamp_ = previous_states_[i-1].first;
 
         return earliest_change_ts;
@@ -175,6 +179,7 @@ public:
             double earliest_displaced_event_ts = restoreState(ts);
             atomic_min(window_ub[window_lsb], earliest_displaced_event_ts);
             last_change_timestamp_ = ts;
+            //std::cout<<"hi"<<std::endl;
             return true;
         }
 
@@ -183,6 +188,7 @@ public:
         if (!r)
         {
             atomic_min(window_ub[window_lsb], ts);
+            //std::cout<<"bye"<<max_saved_states_<<" - "<<num_saved_states_<<std::endl;
             return false;
         }
 
@@ -201,6 +207,7 @@ public:
     std::tuple<bool, bool, std::vector<Event>, std::vector<Event>> processEvent(const Event& event, std::array<std::atomic<double>,2>& window_ub, bool window_lsb)
     {
         lock();
+     //   std::cout<< "event : " << event.getTimestamp() << " target: " << event.getTargetId() << " current_entity: "<< entity_->getId() << " last change: "<<last_change_timestamp_  <<std::endl;
         std::vector<Event> generated_events;
         std::vector<Event> new_events;
         bool is_dirty = false;
@@ -230,7 +237,7 @@ public:
             return {false, is_dirty, generated_events, new_events};
         }
 
-        std::vector<Event> result_events = entity->handleEvent(event, getLocalVirtualTime());
+        std::vector<Event> result_events = entity->handleEvent(event, last_change_timestamp_);
 
         generated_events.reserve(new_events.size());
         new_events.reserve(new_events.size());
@@ -394,7 +401,7 @@ SimulationStats WindowRacerEngine::run()
             }
 
             pthread_barrier_wait(&barrier);
-            std::cout<<"tid:"<<thread_id<<" lvt:"<<local_virtual_time<<" ub:"<<window_ub_[window_lsb]<<" lb:"<<window_lb_[window_lsb]<<" tau:"<<tau<<std::endl;
+            //std::cout<<"tid:"<<thread_id<<" lvt:"<<local_virtual_time<<" ub:"<<window_ub_[window_lsb]<<" lb:"<<window_lb_[window_lsb]<<" tau:"<<tau<<'\n'<<std::endl;
 
             if (window_lb_[window_lsb] >= config_.end_time)
             {
@@ -461,7 +468,7 @@ SimulationStats WindowRacerEngine::run()
 
             new_event_queues_[thread_id] = std::priority_queue<Event, std::vector<Event>, EventComparator>();
             pthread_barrier_wait(&barrier);
-            std::cout<<"tid: "<< thread_id << "new_events:" << new_event_queues_[thread_id].size()<<std::endl;
+           // std::cout<<"tid: "<< thread_id << "new_events:" << new_event_queues_[thread_id].size()<<std::endl;
 
             final_window_ub = window_ub_[window_lsb];
 
@@ -487,7 +494,7 @@ SimulationStats WindowRacerEngine::run()
                     WindowRacerLP *entity = *ent_it;
                     std::vector<Event> &entity_event_list = entity->getEventList();
 
-                    std::cout<<"tid: "<<thread_id<<" dirty: "<<dirty_entities_[src_thread][thread_id].size()<<" entity: "<<entity->getId()<<" events to commit: "<<entity_event_list.size()<<std::endl;
+                  //  std::cout<<"src_tid: "<< src_thread <<" tid: "<<thread_id<<" dirty: "<<dirty_entities_[src_thread][thread_id].size()<<" entity: "<<entity->getId()<<" events to commit: "<<entity_event_list.size()<<std::endl;
                     // Iterate through the events that were executed in this entity
                     for (auto ev_it = entity_event_list.begin(); ev_it != entity_event_list.end(); ev_it++)
                     {
@@ -528,6 +535,7 @@ SimulationStats WindowRacerEngine::run()
                     logical_processes_[entity->getId()]->setLastChangeTimestamp(-1.0);
                     entity->getEventList().clear();
                     logical_processes_[entity->getId()]->setNumSavedStates(0);
+                    logical_processes_[entity->getId()]->getSavedStates().clear();
                 }
             }
 
@@ -543,7 +551,7 @@ SimulationStats WindowRacerEngine::run()
             //calculate new tau
             tau = hindsight_optimal_tau * config_.window_racer.window_growth_factor;
             pthread_barrier_wait(&barrier);
-            std::cout<<"tid: "<<thread_id<<" finished commit "<<final_window_ub<<" calculated tau: "<<tau<<std::endl;
+        //    std::cout<<"tid: "<<thread_id<<" finished commit "<<final_window_ub<<" calculated tau: "<<tau<<'\n'<<std::endl;
 
             // assert tau > 0.0
 
