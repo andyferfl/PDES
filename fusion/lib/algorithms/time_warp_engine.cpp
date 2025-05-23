@@ -165,7 +165,7 @@ void TimeWarpEngine::TimeWarpLP::rollback(double rollback_time) {
     // 2. Восстанавливаем состояния сущностей
     for (const auto& [entity_id, state] : state_it->second) {
         if (auto entity = getEntity(entity_id)) {
-            entity->restoreState(state, state_it->first);
+            entity->restoreState(*state, state_it->first);
         }
     }
 
@@ -252,7 +252,7 @@ void TimeWarpEngine::TimeWarpLP::cancelEvent(const Event& anti_message) {
 
 void TimeWarpEngine::TimeWarpLP::saveEntityState(std::shared_ptr<Entity> entity, double time) {
     // Save entity state at this time
-    std::any state = entity->saveState(time);
+    Entity* state = &entity->saveState(time);
     
     // Store in saved states map
     saved_states_[time][entity->getId()] = state;

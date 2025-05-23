@@ -90,7 +90,7 @@ private:
             uint32_t max_states_saved_;
             bool lazy_cancellation_;
             std::priority_queue<Event, std::vector<Event>, EventComparator> event_queue_;
-            std::map<double, std::map<uint32_t, std::any>> saved_states_;
+            std::map<double, std::map<uint32_t, Entity*>> saved_states_;
             std::vector<Event> processed_event_history_;
             std::vector<Event> output_event_history_;
             std::map<uint32_t, std::vector<Event>> pending_remote_events_;
