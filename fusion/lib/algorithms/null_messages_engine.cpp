@@ -108,7 +108,7 @@ public:
                     continue;
                 }
 
-                double safe_time = current_time + getLookahead();
+                double safe_time = std::max(current_time + getLookahead(),peekNextEventTime());
                 all_lps[target_lp]->updateInputChannel(getId(), safe_time);
                 null_messages_sent_++;
             }

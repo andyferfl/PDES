@@ -37,6 +37,29 @@ public:
     uint64_t getId() const;
 
     /**
+     * @brief Get the Number of Saved States in this entity
+     * 
+     * @return uint64_t 
+     */
+    uint64_t getNumSavedStates() const;
+
+    /**
+     * @brief Get the Maximum Number of Saved States in this entity
+     * 
+     * @return uint64_t 
+     */
+    uint64_t getMaxNumSavedStates() const;
+
+    void setMaxNumSavedStates(const uint64_t saved_states);
+
+    /**
+     * @brief Get the Number of Saved States in this entity
+     * 
+     * @return uint64_t 
+     */
+    void setNumSavedStates(const uint64_t saved_states);
+
+    /**
      * @brief Initialize the entity
      * 
      * This method is called once at the begining of the simulation.
@@ -64,9 +87,9 @@ public:
      * before processing an event that might be rolled back.
      * 
      * @param time Simulation time at which the state is saved.
-     * @return std::any The saved state.
+     * @return Event& The state to be saved.
      */
-    virtual std::any saveState(double time);
+    virtual Entity& saveState(double time) = 0;
 
     /**
      * @brief Restore the entity's state
@@ -77,7 +100,7 @@ public:
      * @param state state to restore 
      * @param time Simulation time to restore to
      */
-    virtual void restoreState(const std::any& state, double time);
+    void restoreState(const Entity& state, double time);
 
     /**
      * @brief Set the Logical Process ID
@@ -111,6 +134,8 @@ protected:
 private:
     uint64_t id_;               // Unique ID for this entity
     uint32_t logical_process_;  // ID of the LP this entity belongs to
+    uint64_t num_saved_states_; // Number of saved states for this entity
+    uint64_t max_num_prev_states_; // Maximum number of states that can be saved
 };
 
 }

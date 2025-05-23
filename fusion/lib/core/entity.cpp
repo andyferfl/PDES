@@ -21,14 +21,40 @@ uint64_t Entity::getId() const
     return id_;
 }
 
-std::any Entity::saveState(double time)
+uint64_t Entity::getNumSavedStates() const
 {
-    //Default implementation returns empty state.
-    //This method should be overrided to save a specific state.
-    return {};
+    return num_saved_states_;
 }
 
-void Entity::restoreState(const std::any& state, double time)
+uint64_t Entity::getMaxNumSavedStates() const
+{
+    return max_num_prev_states_;
+}
+
+void Entity::setMaxNumSavedStates(const uint64_t saved_states)
+{
+    max_num_prev_states_ = saved_states;
+}
+
+void Entity::setNumSavedStates(const uint64_t saved_states)
+{
+    num_saved_states_ = saved_states;
+}
+
+
+/*Entity& Entity::saveState(double time)
+{
+    if (num_saved_states_ == max_num_prev_states_)
+    {
+        //return;
+    }
+
+    num_saved_states_++;
+
+    return *this;
+}*/
+
+void Entity::restoreState(const Entity& state, double time)
 {
     //Default implementation does nothing.
     //This method should be overrided to restore a specific state.   

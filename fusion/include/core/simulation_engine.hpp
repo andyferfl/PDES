@@ -38,6 +38,7 @@ struct SimulationConfig
         double initial_window_size = 1e-4;
         double window_growth_factor = 100.0;
         int max_states_saved = 10;
+        int num_entities = 10;
     } window_racer;
 
     struct

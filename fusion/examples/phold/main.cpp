@@ -15,12 +15,12 @@ void runPHoldBenchmark()
     std::cout << "============================\n\n";
     
     // Parameters
-    const uint64_t num_entities = 1024;
+    const uint64_t num_entities = 10;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
-    const double lookahead = 10000;
+    const double lookahead = 1.0;
     const double mean_delay = 1.0;
-    const uint32_t initial_events = 10;
+    const uint32_t initial_events = 1;
     const double end_time = 10.0;
     const uint64_t seed = 12345;
     
@@ -54,7 +54,7 @@ void runPHoldBenchmark()
         auto stats = manager.run();
         manager.printStatistics(stats);
         std::cout << "\n";
-        
+        manager.saveStatisticsToFile("des.txt", stats);        
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }
@@ -63,8 +63,8 @@ void runPHoldBenchmark()
     {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
-               .setThreadCount(4)
-               .setLogicalProcessCount(16)
+               .setThreadCount(2)
+               .setLogicalProcessCount(5)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -78,7 +78,30 @@ void runPHoldBenchmark()
         auto stats = manager.run();
         manager.printStatistics(stats);
         std::cout << "\n";
-        manager.saveStatisticsToFile("output.txt", stats);        
+        manager.saveStatisticsToFile("nm.txt", stats);
+        stats_list.push_back(stats);
+        config_list.push_back(manager.getConfig());
+    }
+
+    // Run with Window racer algorithm
+    {
+        SimulationManager manager;
+        manager.setAlgorithm(SimulationAlgorithm::WINDOW_RACER)
+               .setThreadCount(2)
+               .setEndTime(end_time)
+               .setDetailedStats(true)
+               .configureWindowRacer(num_entities);
+        
+        for (const auto& entity : entities)
+        {
+            manager.registerEntity(entity);
+        }
+        
+        std::cout << "Running Window Racer PDES...\n";
+        auto stats = manager.run();
+        manager.printStatistics(stats);
+        std::cout << "\n";
+        manager.saveStatisticsToFile("wr.txt", stats);
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
     }
