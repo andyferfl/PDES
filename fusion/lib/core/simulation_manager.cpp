@@ -228,6 +228,7 @@ void SimulationManager::printStatistics(const SimulationStats& stats) const
         config_.algorithm == SimulationAlgorithm::TIME_WARP)
     {
         std::cout << "Rollbacks: " << stats.total_rollbacks << "\n";
+        std::cout << "Events commited: " << stats.total_events_commited << "\n";
     }
 
     if (config_.algorithm == SimulationAlgorithm::NULL_MESSAGES)

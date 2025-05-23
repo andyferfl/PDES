@@ -60,12 +60,14 @@ struct SimulationStats
     double simulation_time = 0.0;
     double wall_clock_time = 0.0;
     uint64_t total_events_processed = 0;
+    uint64_t total_events_commited = 0;
     uint64_t total_events_generated = 0;
     uint64_t total_rollbacks = 0;
     uint64_t total_null_messages = 0;
     double efficiency = 0.0;
 
     std::vector<uint64_t> events_processed_per_lp;
+    std::vector<uint64_t> events_commited_per_lp;
     std::vector<uint64_t> rollbacks_per_lp;
     std::vector<uint64_t> null_messages_per_lp;
 

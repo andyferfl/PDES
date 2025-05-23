@@ -15,7 +15,7 @@ void runPHoldBenchmark()
     std::cout << "============================\n\n";
     
     // Parameters
-    const uint64_t num_entities = 10;
+    const uint64_t num_entities = 1024;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
     const double lookahead = 1.0;
@@ -110,7 +110,7 @@ void runPHoldBenchmark()
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::TIME_WARP)
                .setThreadCount(4)
-               .setLogicalProcessCount(16)
+               .setLogicalProcessCount(8)
                .setEndTime(end_time)
                .setDetailedStats(true);
 
