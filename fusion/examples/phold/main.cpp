@@ -9,7 +9,7 @@
 
 using namespace fusion;
 
-void runPHoldBenchmark()
+void runPHoldBenchmark(uint32_t threads, double lookahead, uint64_t lps)
 {
     std::cout << "Running PHOLD Benchmark Tests\n";
     std::cout << "============================\n\n";
@@ -18,10 +18,9 @@ void runPHoldBenchmark()
     const uint64_t num_entities = 1024;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
-    const double lookahead = 1.0;
     const double mean_delay = 1.0;
     const uint32_t initial_events = 1;
-    const double end_time = 10.0;
+    const double end_time = 1000.0;
     const uint64_t seed = 12345;
     
     // Create entities
@@ -63,8 +62,8 @@ void runPHoldBenchmark()
     {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
-               .setThreadCount(2)
-               .setLogicalProcessCount(5)
+               .setThreadCount(threads)
+               .setLogicalProcessCount(lps)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -87,10 +86,10 @@ void runPHoldBenchmark()
     {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::WINDOW_RACER)
-               .setThreadCount(2)
+               .setThreadCount(threads)
                .setEndTime(end_time)
                .setDetailedStats(true)
-               .configureWindowRacer(num_entities);
+               .configureWindowRacer(num_entities,lookahead,100.0,100);
         
         for (const auto& entity : entities)
         {
@@ -109,8 +108,8 @@ void runPHoldBenchmark()
     {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::TIME_WARP)
-               .setThreadCount(4)
-               .setLogicalProcessCount(8)
+               .setThreadCount(threads)
+               .setLogicalProcessCount(lps)
                .setEndTime(end_time)
                .setDetailedStats(true);
 
@@ -137,7 +136,11 @@ int main()
     std::cout << "DES/PDES PHold Test Program\n";
     std::cout << "============================\n\n";
     
-    runPHoldBenchmark();
+    for (int i = 0; i < 100 ; ++i)
+    {
+        runPHoldBenchmark(4,1,10);
+    }
+
     std::cout << "\n";
         
     return 0;

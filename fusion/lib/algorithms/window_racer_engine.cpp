@@ -40,7 +40,9 @@ public:
         : LogicalProcess(id),
           last_change_timestamp_(0.0),
           num_saved_states_(0),
-          max_saved_states_(max_states_saved)
+          max_saved_states_(max_states_saved),
+          immediate_rollbacks_(0),
+          window_end_rollbacks_(0)
     {
         previous_states_.reserve(max_states_saved);
     }
@@ -87,6 +89,31 @@ public:
         return previous_states_;
     }
 
+    uint64_t getProcessedEvents() const
+    {
+        return processed_events_;
+    }
+
+    uint64_t getImmediateRollbacks() const
+    {
+        return immediate_rollbacks_;
+    }
+
+    uint64_t getWindowEndRollbacks() const
+    {
+        return window_end_rollbacks_;
+    }
+
+    uint64_t getGeneratedEvents() const
+    {
+        return generated_events_;
+    }
+
+    uint64_t getLastChangeTimestamp() const
+    {
+        return last_change_timestamp_;
+    }
+
     /**
      * @brief process the next event in the event_queue
      * 
@@ -113,14 +140,8 @@ public:
 
         saved_states++;
 
-        /*try
-        {*/
-            previous_states_[saved_states - 1] = std::make_pair(last_change_timestamp_, &entity_->saveState(last_change_timestamp_));
-        /*}
-        catch(...)
-        {
-            return false;
-        }*/
+        previous_states_[saved_states - 1] = std::make_pair(last_change_timestamp_, &entity_->saveState(last_change_timestamp_));
+
         entity_->setNumSavedStates(saved_states);
         num_saved_states_ = saved_states;
 
@@ -135,10 +156,12 @@ public:
 
         for (; previous_states_[i - 1].first >= ts > 0; i--)
         {
-       //     std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << std::endl;
             rollbacks++;
+            window_end_rollbacks_++;
         }
-     //   std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << " extra: "<< previous_states_[i-1].second->getNumSavedStates() << std::endl;
+
+        window_end_rollbacks_++;
+
         std::shared_ptr<Entity> tmp(previous_states_[i-1].second, [](Entity*){/* no-op deleter */});
         entity_ = tmp;
         entity_->setNumSavedStates(i-1);
@@ -153,10 +176,12 @@ public:
         uint64_t i = entity_->getNumSavedStates();
         for (; previous_states_[i - 1].first > ts; i--)
         {
-        //    std::cout<< "rollback "<<i-1<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << std::endl;
             earliest_change_ts = previous_states_[i - 1].first;
+            immediate_rollbacks_++;
         }
-      //  std::cout<< "rollback "<<i<<" : " << previous_states_[i-1].first << " entity: " << previous_states_[i-1].second->getId() << " extra: "<< previous_states_[i-1].second->getNumSavedStates() << std::endl;
+        
+        immediate_rollbacks_++;
+
         std::shared_ptr<Entity> tmp(previous_states_[i-1].second, [](Entity*){/* no-op deleter */});
         entity_ = tmp;
         entity_->setNumSavedStates(i-1);
@@ -179,7 +204,6 @@ public:
             double earliest_displaced_event_ts = restoreState(ts);
             atomic_min(window_ub[window_lsb], earliest_displaced_event_ts);
             last_change_timestamp_ = ts;
-            //std::cout<<"hi"<<std::endl;
             return true;
         }
 
@@ -188,7 +212,6 @@ public:
         if (!r)
         {
             atomic_min(window_ub[window_lsb], ts);
-            //std::cout<<"bye"<<max_saved_states_<<" - "<<num_saved_states_<<std::endl;
             return false;
         }
 
@@ -207,7 +230,7 @@ public:
     std::tuple<bool, bool, std::vector<Event>, std::vector<Event>> processEvent(const Event& event, std::array<std::atomic<double>,2>& window_ub, bool window_lsb)
     {
         lock();
-     //   std::cout<< "event : " << event.getTimestamp() << " target: " << event.getTargetId() << " current_entity: "<< entity_->getId() << " last change: "<<last_change_timestamp_  <<std::endl;
+
         std::vector<Event> generated_events;
         std::vector<Event> new_events;
         bool is_dirty = false;
@@ -266,6 +289,8 @@ private:
     double last_change_timestamp_;
     uint64_t num_saved_states_;
     uint64_t max_saved_states_;
+    uint64_t immediate_rollbacks_;
+    uint64_t window_end_rollbacks_;
     std::shared_ptr<Entity> entity_;
     std::vector<Event> event_list_;
     std::vector<std::pair<double, Entity*>> previous_states_;
@@ -335,7 +360,7 @@ void WindowRacerEngine::handleEvent(Event next_event, uint32_t thread_id, bool w
 {
     auto lp = logical_processes_[next_event.getTargetId()];
 
-    auto result = lp->processEvent(next_event,window_ub_, window_lsb);
+    auto result = lp->processEvent(next_event, window_ub_, window_lsb);
     if (std::get<1>(result))
     {
         dirty_entities_[thread_id][id_to_tid(next_event.getTargetId())].push_back(lp.get());
@@ -369,6 +394,9 @@ SimulationStats WindowRacerEngine::run()
     running_ = true;
 
     worker_threads_.resize(config_.num_threads);
+    stats_.window_racer.windows = 0;
+    stats_.events_commited_per_lp.resize(config_.num_threads);
+    stats_.window_racer.window_sizes.reserve(config_.end_time/config_.window_racer.initial_window_size);
 
     pthread_barrier_t barrier;
     pthread_barrier_init(&barrier, nullptr, config_.num_threads);
@@ -383,25 +411,23 @@ SimulationStats WindowRacerEngine::run()
         
         if (!thread_id)
         {
-            window_ub_[window_lsb] = window_lb_[window_lsb] = std::numeric_limits<double>::infinity();
+            window_ub_[window_lsb] = window_lb_[window_lsb] = config_.end_time;
         }
 
         while (running_)
         {
-            double local_virtual_time = event_queues_[thread_id].empty() ? std::numeric_limits<double>::infinity() : event_queues_[thread_id].top().getTimestamp();
+            double local_virtual_time = event_queues_[thread_id].empty() ? config_.end_time : event_queues_[thread_id].top().getTimestamp();
             double final_window_ub = 0.0;
-            // assert lvt > 0
 
             atomic_min(window_ub_[window_lsb], local_virtual_time + tau);
             atomic_min(window_lb_[window_lsb], local_virtual_time);
 
             if (!thread_id)
             {
-                window_ub_[1 - window_lsb] = window_lb_[1 - window_lsb] = std::numeric_limits<double>::infinity();
+                window_ub_[1 - window_lsb] = window_lb_[1 - window_lsb] = config_.end_time;
             }
 
             pthread_barrier_wait(&barrier);
-            //std::cout<<"tid:"<<thread_id<<" lvt:"<<local_virtual_time<<" ub:"<<window_ub_[window_lsb]<<" lb:"<<window_lb_[window_lsb]<<" tau:"<<tau<<'\n'<<std::endl;
 
             if (window_lb_[window_lsb] >= config_.end_time)
             {
@@ -455,7 +481,7 @@ SimulationStats WindowRacerEngine::run()
                 {
                     break;
                 }
-                //entities_[next_event.getTargetId()]->handleEvent(next_event, local_virtual_time);
+
                 handleEvent(next_event, thread_id, window_lsb);
             }
 
@@ -468,7 +494,6 @@ SimulationStats WindowRacerEngine::run()
 
             new_event_queues_[thread_id] = std::priority_queue<Event, std::vector<Event>, EventComparator>();
             pthread_barrier_wait(&barrier);
-           // std::cout<<"tid: "<< thread_id << "new_events:" << new_event_queues_[thread_id].size()<<std::endl;
 
             final_window_ub = window_ub_[window_lsb];
 
@@ -528,10 +553,12 @@ SimulationStats WindowRacerEngine::run()
                     if (entity->getLastChangeTimestamp() >= final_window_ub)
                     {
                         // assert i >= 0 and <= max_num_prev_states
-                        stats_.window_racer.window_end_rollbacks += entity->restoreStateWindowEnd(final_window_ub);
+                        entity->restoreStateWindowEnd(final_window_ub);
                     }
 
                     // we reset the values for the next iteration
+                    
+                    logical_processes_[entity->getId()]->setLocalVirtualTime(logical_processes_[entity->getId()]->getLastChangeTimestamp());
                     logical_processes_[entity->getId()]->setLastChangeTimestamp(-1.0);
                     entity->getEventList().clear();
                     logical_processes_[entity->getId()]->setNumSavedStates(0);
@@ -544,18 +571,15 @@ SimulationStats WindowRacerEngine::run()
 
             if (!thread_id)
             {
-                //window_number++
-                //final_window_sizes.push(hindsight_optimal_tau)
+                stats_.window_racer.windows++;
+                //stats_.window_racer.window_sizes.push_back(hindsight_optimal_tau);
             }
 
             //calculate new tau
             tau = hindsight_optimal_tau * config_.window_racer.window_growth_factor;
             pthread_barrier_wait(&barrier);
-        //    std::cout<<"tid: "<<thread_id<<" finished commit "<<final_window_ub<<" calculated tau: "<<tau<<'\n'<<std::endl;
 
-            // assert tau > 0.0
-
-            //num_commited_thread_total += num_commited;
+            stats_.events_commited_per_lp[thread_id] += num_commited;
             num_commited = 0;
             
             //clear dirty entities
@@ -591,21 +615,35 @@ SimulationStats WindowRacerEngine::run()
 
     stats_.simulation_time = max_time;
     stats_.wall_clock_time = elapsed.count();
+
     stats_.total_events_processed = 0;
     stats_.total_events_generated = 0;
-    stats_.total_null_messages = 0;
-    stats_.events_processed_per_lp.resize(logical_processes_.size());
-    stats_.null_messages_per_lp.resize(logical_processes_.size());
+    stats_.total_events_commited = 0;
+    stats_.total_rollbacks = 0;
+    stats_.window_racer.immediate_rollbacks = 0;
+    stats_.window_racer.window_end_rollbacks = 0;
+    stats_.events_processed_per_lp.resize(config_.num_threads);
+    stats_.rollbacks_per_lp.resize(config_.num_threads);
 
     for (size_t i = 0; i < logical_processes_.size(); ++i)
     {
         auto lp = static_cast<WindowRacerLP*>(logical_processes_[i].get());
-        //stats_.events_processed_per_lp[i] = lp->getProcessedEvents();
-        //stats_.total_events_processed += lp->getProcessedEvents();
-        //stats_.total_events_generated += lp->getGeneratedEvents();
+        stats_.events_processed_per_lp[id_to_tid(lp->getId())] = lp->getProcessedEvents();
+        stats_.total_events_processed += lp->getProcessedEvents();
+        stats_.total_events_generated += lp->getGeneratedEvents();
+
+        stats_.rollbacks_per_lp[id_to_tid(lp->getId())] = lp->getImmediateRollbacks() + lp->getWindowEndRollbacks();
+        stats_.window_racer.immediate_rollbacks += lp->getImmediateRollbacks();
+        stats_.window_racer.window_end_rollbacks += lp->getWindowEndRollbacks();
+        stats_.total_rollbacks += lp->getImmediateRollbacks() + lp->getWindowEndRollbacks();
     }
 
-    stats_.efficiency = stats_.total_events_processed / stats_.wall_clock_time;
+    for (size_t i = 0; i < stats_.events_commited_per_lp.size(); ++i)
+    {
+        stats_.total_events_commited += stats_.events_commited_per_lp[i];
+    }
+
+    stats_.efficiency = stats_.total_events_commited / stats_.wall_clock_time;
 
     running_ = false;
     return stats_;    

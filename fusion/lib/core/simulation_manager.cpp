@@ -143,6 +143,7 @@ bool SimulationManager::saveStatisticsToFile(const std::string& filename, const 
     file << "Simulation Time: " << stats.simulation_time << "\n";
     file << "Execution Time: " << stats.wall_clock_time << " seconds\n";
     file << "Events Processed: " << stats.total_events_processed << "\n";
+    file << "Events Commited: " << stats.total_events_commited << "\n";
     file << "Events Generated: " << stats.total_events_generated << "\n";
     file << "Efficiency: " << stats.efficiency << " events/second\n\n";
     
@@ -151,7 +152,12 @@ bool SimulationManager::saveStatisticsToFile(const std::string& filename, const 
     {
         file << "Rollbacks: " << stats.total_rollbacks << "\n";
     }
-    
+    if (config_.algorithm == SimulationAlgorithm::WINDOW_RACER)
+    {
+        file << "Immediate Rollbacks: " << stats.window_racer.immediate_rollbacks << "\n";
+        file << "Window End Rollbacks: " << stats.window_racer.window_end_rollbacks << "\n";
+        file << "Windows: " << stats.window_racer.windows << "\n";
+    }
     if (config_.algorithm == SimulationAlgorithm::NULL_MESSAGES)
     {
         file << "Null Messages: " << stats.total_null_messages << "\n";
@@ -229,6 +235,13 @@ void SimulationManager::printStatistics(const SimulationStats& stats) const
     {
         std::cout << "Rollbacks: " << stats.total_rollbacks << "\n";
         std::cout << "Events commited: " << stats.total_events_commited << "\n";
+    }
+
+    if (config_.algorithm == SimulationAlgorithm::WINDOW_RACER)
+    {
+        std::cout << "Immediate rollbacks: " << stats.window_racer.immediate_rollbacks << "\n";
+        std::cout << "Window end rollbacks: " << stats.window_racer.window_end_rollbacks << "\n";
+        std::cout << "Windows: " << stats.window_racer.windows << "\n";
     }
 
     if (config_.algorithm == SimulationAlgorithm::NULL_MESSAGES)

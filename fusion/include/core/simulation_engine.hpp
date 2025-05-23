@@ -73,6 +73,7 @@ struct SimulationStats
 
     struct
     {
+        uint64_t windows = 0;
         std::vector<double> window_sizes;
         uint64_t immediate_rollbacks = 0;
         uint64_t window_end_rollbacks = 0;
