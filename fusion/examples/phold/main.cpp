@@ -15,13 +15,13 @@ void runPHoldBenchmark()
     std::cout << "============================\n\n";
     
     // Parameters
-    const uint64_t num_entities = 1024;
+    const uint64_t num_entities = 10;
     const double remote_probability = 0.5;
     const double zero_delay_probability = 0.1;
-    const double lookahead = 0.1;
+    const double lookahead = 1.0;
     const double mean_delay = 1.0;
-    const uint32_t initial_events = 10;
-    const double end_time = 1000.0;
+    const uint32_t initial_events = 1;
+    const double end_time = 10.0;
     const uint64_t seed = 12345;
     
     // Create entities
@@ -39,7 +39,7 @@ void runPHoldBenchmark()
     std::vector<SimulationConfig> config_list;
     
     // Run with sequential algorithm
-    /*{
+    {
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::SEQUENTIAL)
                .setEndTime(end_time)
@@ -64,7 +64,7 @@ void runPHoldBenchmark()
         SimulationManager manager;
         manager.setAlgorithm(SimulationAlgorithm::NULL_MESSAGES)
                .setThreadCount(2)
-               .setLogicalProcessCount(32)
+               .setLogicalProcessCount(5)
                .setEndTime(end_time)
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
@@ -81,7 +81,7 @@ void runPHoldBenchmark()
         manager.saveStatisticsToFile("nm.txt", stats);
         stats_list.push_back(stats);
         config_list.push_back(manager.getConfig());
-    }*/
+    }
 
     // Run with Window racer algorithm
     {
@@ -90,7 +90,7 @@ void runPHoldBenchmark()
                .setThreadCount(2)
                .setEndTime(end_time)
                .setDetailedStats(true)
-               .configureWindowRacer(num_entities,1.0,150.0,20);
+               .configureWindowRacer(num_entities);
         
         for (const auto& entity : entities)
         {
