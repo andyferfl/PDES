@@ -150,6 +150,7 @@ public:
 
     uint64_t restoreStateWindowEnd(double ts)
     {
+        std::lock_guard<std::mutex> lock(mutex_);
         double earliest_change_ts = last_change_timestamp_;
         uint64_t i = entity_->getNumSavedStates();
         uint64_t rollbacks = 1;
@@ -390,13 +391,13 @@ void WindowRacerEngine::handleEvent(Event next_event, uint32_t thread_id, bool w
 
 SimulationStats WindowRacerEngine::run()
 {
-    auto start_time = std::chrono::high_resolution_clock::now();
-    running_ = true;
-
     worker_threads_.resize(config_.num_threads);
     stats_.window_racer.windows = 0;
-    stats_.events_commited_per_lp.resize(config_.num_threads);
+    stats_.events_commited_per_lp.assign(config_.num_threads, 0);
     stats_.window_racer.window_sizes.reserve(config_.end_time/config_.window_racer.initial_window_size);
+
+    auto start_time = std::chrono::high_resolution_clock::now();
+    running_ = true;
 
     pthread_barrier_t barrier;
     pthread_barrier_init(&barrier, nullptr, config_.num_threads);
@@ -408,6 +409,7 @@ SimulationStats WindowRacerEngine::run()
         double local_virtual_time = 0.0;
         bool window_lsb = 0;
         double final_window_ub = 0.0;
+        uint64_t num_commited_events = 0;
         
         if (!thread_id)
         {
@@ -578,8 +580,7 @@ SimulationStats WindowRacerEngine::run()
             //calculate new tau
             tau = hindsight_optimal_tau * config_.window_racer.window_growth_factor;
             pthread_barrier_wait(&barrier);
-
-            stats_.events_commited_per_lp[thread_id] += num_commited;
+            num_commited_events += num_commited;
             num_commited = 0;
             
             //clear dirty entities
@@ -590,6 +591,7 @@ SimulationStats WindowRacerEngine::run()
 
             window_lsb = 1 - window_lsb;
         }
+        stats_.events_commited_per_lp[thread_id] = num_commited_events;
     };
 
     for (uint32_t i = 0; i < config_.num_threads; ++i)
