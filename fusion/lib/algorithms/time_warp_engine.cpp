@@ -19,7 +19,11 @@ namespace fusion {
     : LogicalProcess(id), 
       max_states_saved_(max_states_saved),
       lazy_cancellation_(lazy_cancellation),
-      engine_(engine)  {}
+      engine_(engine)
+    {
+        processed_event_history_.reserve(10000);
+        output_event_history_.reserve(10000);
+    }
 
     
     bool TimeWarpEngine::TimeWarpLP::processNextEvent() {
@@ -491,6 +495,7 @@ SimulationStats TimeWarpEngine::run() {
 
             // Барьер 1: синхронизация перед доставкой сообщений
             pthread_barrier_wait(&barrier);
+
             // Проверка завершения
             if (global_virtual_time_.load() >= config_.end_time) {
                 std::cout << "Termination condition met:\n"
