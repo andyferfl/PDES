@@ -50,6 +50,7 @@ public:
     void addEntity(std::shared_ptr<Entity> entity)
     {
         entity_ = entity;
+        entity_->setNumSavedStates(0);
         entity_->setMaxNumSavedStates(max_saved_states_);
     }
 
