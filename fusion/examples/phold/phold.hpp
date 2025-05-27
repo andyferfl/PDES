@@ -21,7 +21,8 @@ public:
         double lookahead,
         double mean_delay,
         uint32_t initial_events,
-        uint64_t seed
+        uint64_t seed,
+        uint64_t computing
     );
 
     std::vector<Event> initialize() override;
@@ -36,6 +37,7 @@ private:
     double lookahead_;
     double mean_delay_;
     uint32_t initial_events_;
+    uint64_t computing_;
 
     std::mt19937_64 rng_;
     std::uniform_real_distribution<double> uniform_dist_;
@@ -55,7 +57,8 @@ std::vector<std::shared_ptr<Entity>> createPHoldModel(
     double lookahead = 0.1,
     double mean_delay = 1.0,
     uint32_t initial_events = 1,
-    uint64_t seed = 12345
+    uint64_t seed = 12345,
+    uint64_t computing = 1
 );
 
 }

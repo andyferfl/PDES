@@ -26,7 +26,8 @@ PHoldEntity::PHoldEntity(
     double lookahead,
     double mean_delay,
     uint32_t initial_events,
-    uint64_t seed)
+    uint64_t seed,
+    uint64_t computing)
     : Entity(id),
         num_entities_(num_entities),
         remote_probability_(remote_probability),
@@ -39,7 +40,8 @@ PHoldEntity::PHoldEntity(
         delay_dist_(1.0 / mean_delay),
         entity_dist_(0, num_entities - 1),
         events_processed_(0),
-        events_generated_(0)
+        events_generated_(0),
+        computing_(computing)
 {
     // if (mean_delay <= 0.0) {
     //     throw std::runtime_error("mean_delay must be positive");
@@ -84,7 +86,10 @@ std::vector<Event> PHoldEntity::initialize()
 
 std::vector<Event> PHoldEntity::handleEvent(const Event& event, double current_time)
 {
-    events_processed_++;
+    for (int i = 0; i < computing_; ++i)
+    {
+    }
+
     std::vector<Event> new_events;
     new_events.push_back(generateEvent(current_time));
     
@@ -113,7 +118,19 @@ Event PHoldEntity::generateEvent(double current_time)
         delay = lookahead_ + delay_dist_(rng_);
     }
     
+    /*uint64_t dst_id;
+    if (uniform_dist_(rng_) < remote_probability_)
+    {
+        dst_id = entity_dist_(rng_);
+        if (dst_id == getId())
+        {
+            dst_id = (dst_id + 1) % num_entities_;
+        }
+    }
+    else
+    {*/
     uint64_t dst_id = getId();
+    //}
     
     Event event = createEvent(current_time + delay, dst_id, PHOLD_EVENT);
     events_generated_++;
@@ -128,7 +145,8 @@ std::vector<std::shared_ptr<Entity>> createPHoldModel(
     double lookahead,
     double mean_delay,
     uint32_t initial_events,
-    uint64_t seed)
+    uint64_t seed,
+    uint64_t computing)
 {
     std::vector<std::shared_ptr<Entity>> entities;
     entities.reserve(num_entities);
@@ -137,7 +155,7 @@ std::vector<std::shared_ptr<Entity>> createPHoldModel(
     {
         entities.push_back(std::make_shared<PHoldEntity>(
             i, num_entities, remote_probability, zero_delay_probability,
-            lookahead, mean_delay, initial_events, seed));
+            lookahead, mean_delay, initial_events, seed, computing));
     }
     
     return entities;
