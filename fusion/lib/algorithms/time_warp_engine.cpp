@@ -34,6 +34,11 @@ namespace fusion {
             }
 
             Event event = event_queue_.top(); 
+
+            if (event.getTimestamp() > engine_->config_.end_time) {
+                return false;
+            }
+
             event_queue_.pop();
             lock.unlock();
 
@@ -469,6 +474,7 @@ SimulationStats TimeWarpEngine::run() {
         }
 
         uint64_t event_count = 0;
+        uint64_t previous_event_count = 0;
         auto last_status_time = std::chrono::steady_clock::now();
         
         while (running_.load()) {
@@ -503,9 +509,10 @@ SimulationStats TimeWarpEngine::run() {
                     << ", End Time = " << config_.end_time << "\n";
 
                 running_.store(false);
-                pthread_barrier_wait(&barrier);
                 break;
             }
+            
+            pthread_barrier_wait(&barrier);
             
             // Доставка сообщений
             for (auto lp : my_lps) {
@@ -523,7 +530,7 @@ SimulationStats TimeWarpEngine::run() {
                 if (!global_progress.load()) {
                     bool all_empty = true;
                     for (const auto& lp : logical_processes_) {
-                        if (!static_cast<TimeWarpLP*>(lp.get())->eventQueueEmpty()) {
+                        if (!static_cast<TimeWarpLP*>(lp.get())->eventQueueEmpty() && static_cast<TimeWarpLP*>(lp.get())->peekNextEventTime() < config_.end_time) {
                             all_empty = false;
                             break;
                         }
@@ -538,19 +545,20 @@ SimulationStats TimeWarpEngine::run() {
 
                 // Периодический расчет GVT
                 if (config_.time_warp.gvt_interval > 0 && 
-                    event_count % static_cast<uint64_t>(config_.time_warp.gvt_interval) == 0) {
+                    (event_count-previous_event_count) >= static_cast<uint64_t>(config_.time_warp.gvt_interval)) {
                     calculateGVT();
                     stats_.time_warp.gvt_calculations++;
-                    
                     double gvt = global_virtual_time_.load();
                     for (auto& lp : logical_processes_) {
                         // std::cout << "fossilCollect" << std::endl;
                         static_cast<TimeWarpLP*>(lp.get())->fossilCollect(gvt);
                     }
-                    stats_.time_warp.fossil_collections++; 
+                    stats_.time_warp.fossil_collections++;
+                    previous_event_count = event_count;
                 }
 
                 global_progress.store(false); // Сброс флага прогресса
+
             }
             
             // Барьер 3: финальная синхронизация
@@ -654,12 +662,16 @@ uint32_t TimeWarpEngine::getAssignedLpForEntity(uint64_t entity_id)  {
 
 void TimeWarpEngine::calculateGVT() {
 
-    double min_time = std::numeric_limits<double>::max();
+    double min_time = std::numeric_limits<double>::infinity();
     
     // 1. Найти минимальное LVT среди всех LP
     for (const auto& lp : logical_processes_) {
         double lvt = static_cast<TimeWarpLP*>(lp.get())->getLocalVirtualTime();
         // std::cout << "[GVT] LP LVT: " << lvt << std::endl;
+        if (lp->getEventQueueSize() == 0)
+        {
+            continue;
+        }
         min_time = std::min(min_time, lvt);
     }
     
