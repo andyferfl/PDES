@@ -9,7 +9,7 @@
 
 using namespace fusion;
 
-void runPHoldBenchmark(const uint64_t &num_entities, const uint32_t &threads, const double &lookahead, const uint64_t &lps, std::vector<SimulationStats> &stats_list, std::vector<SimulationConfig> &config_list)
+void runPHoldBenchmark(const uint64_t &num_entities, const uint32_t &threads, const double &lookahead, const uint64_t &lps, std::vector<SimulationStats> &stats_list, std::vector<SimulationConfig> &config_list, const uint64_t for_loop)
 {
     std::cout << "Running PHOLD Benchmark Tests\n";
     std::cout << "============================\n\n";
@@ -31,7 +31,8 @@ void runPHoldBenchmark(const uint64_t &num_entities, const uint32_t &threads, co
         lookahead, 
         mean_delay, 
         initial_events, 
-        seed);
+        seed,
+        for_loop);
     
     // Run with sequential algorithm
     {
@@ -132,43 +133,66 @@ int main()
     std::cout << "DES/PDES PHold Test Program\n";
     std::cout << "============================\n\n";
     
-    std::ofstream file("test.csv");
+    std::ofstream file("test2.csv");
 
     if (!file.is_open())
     {
         return false;
     }
-    file << "iteration;algorithm;threads;lps;entities;lookahead;end_time;actual_end_time;commited_events;execution_time;efficiency"<<std::endl;
+    file << "iteration;algorithm;threads;lps;entities;lookahead;for_loop;end_time;actual_end_time;commited_events;execution_time;efficiency"<<std::endl;
 
-    uint64_t entities = 1024;
-    uint32_t threads = 4;
-    double lookahead = 0.5;
-    uint64_t lps = 100;
+    std::vector<int> entities_var = {1000, 700, 500, 20};
+    std::vector<int> threads_var = {4, 8, 16, 20};
+    std::vector<double> lookahead_var = {1.0, 10.0, 100.0, 0.5};
+    std::vector<int> lps_var = {100, 30, 10, 50};
+    std::vector<int> for_loop_var = {1, 1000, 10000, 100000};
 
-    for (int i = 0; i < 100 ; ++i)
+
+    for (const int &lps : lps_var)
     {
-        std::vector<SimulationStats> stats_list;
-        std::vector<SimulationConfig> config_list;
-        runPHoldBenchmark(entities, threads, lookahead, lps, stats_list, config_list);
-        
-       auto stats = stats_list.begin();
-       auto config = config_list.begin();
+        for (const int &threads : threads_var)
+        {
+            for (const double &lookahead : lookahead_var)
+            {
+                for (const int &entities : entities_var)
+                {
+                    for (const int &for_loop : for_loop_var)
+                    {
+                        for (int i = 0; i < 20 ; ++i)
+                        {
+                            std::vector<SimulationStats> stats_list;
+                            std::vector<SimulationConfig> config_list;
+                            runPHoldBenchmark(entities, threads, lookahead, lps, stats_list, config_list, for_loop);
+                            
+                            auto stats = stats_list.begin();
+                            auto config = config_list.begin();
 
-       while (stats != stats_list.end() && config != config_list.end()) {
-            uint64_t commited = config->algorithm == SimulationAlgorithm::WINDOW_RACER ? stats->total_events_commited : stats->total_events_processed;
+                            while (stats != stats_list.end() && config != config_list.end())
+                            {
+                                uint64_t commited = config->algorithm == SimulationAlgorithm::WINDOW_RACER ? stats->total_events_commited : stats->total_events_processed;
 
-            file << i << ";" << SimulationManager::algorithmToString(config->algorithm) << ";" << config->num_threads << ";" 
-                << config->num_logical_processes << ";" << entities << ";" << lookahead << ";" << config->end_time << ";" 
-                << stats->simulation_time << ";" << commited << ";" << stats->wall_clock_time << ";" 
-                << stats->efficiency << std::endl;
+                                file << i << ";" << SimulationManager::algorithmToString(config->algorithm) << ";" << config->num_threads << ";" 
+                                    << config->num_logical_processes << ";" << entities << ";" << lookahead << ";" << for_loop << ";" << config->end_time << ";" 
+                                    << stats->simulation_time << ";" << commited << ";" << stats->wall_clock_time << ";" 
+                                    << stats->efficiency << std::endl;
 
-           ++stats;
-           ++config;
+                                ++stats;
+                                ++config;
+                            }
+
+                        }
+                    }
+                }
+            }
         }
-
     }
 
 
+
+   /* uint64_t entities = 1024;
+    uint32_t threads = 4;
+    double lookahead = 0.5;
+    uint64_t lps = 100;*/
 
     std::cout << "\n";
         
