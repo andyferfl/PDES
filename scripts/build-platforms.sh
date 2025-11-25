@@ -25,7 +25,8 @@ make
 
 # Устанавливаем SST
 echo "Decompressing SST..."
-tar -xvzf $PLATFORMS_DIR/sst-core.tar.gz --directory=$PLATFORMS_DIR >> $INSTALL_LOGS_DIR
+# tar -xvzf $PLATFORMS_DIR/sst-core.tar.gz --directory=$PLATFORMS_DIR >> $INSTALL_LOGS_DIR
+tar -xvf $PLATFORMS_DIR/sst-core.tar.gz -C $PLATFORMS_DIR >> $INSTALL_LOGS_DIR 
 cd $SST_DIR
 
 echo "Building SST..."
