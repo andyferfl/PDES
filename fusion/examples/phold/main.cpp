@@ -35,16 +35,16 @@ void runPHoldBenchmark(const uint64_t &num_entities, const uint32_t &threads, co
         for_loop);
     
     // Run with sequential algorithm
-    {
-        SimulationManager manager;
-        manager.setAlgorithm(SimulationAlgorithm::SEQUENTIAL)
-               .setEndTime(end_time)
-               .setDetailedStats(true);
+    // {
+    //     SimulationManager manager;
+    //     manager.setAlgorithm(SimulationAlgorithm::SEQUENTIAL)
+    //            .setEndTime(end_time)
+    //            .setDetailedStats(true);
         
-        for (const auto& entity : entities)
-        {
-            manager.registerEntity(entity);
-        }
+    //     for (const auto& entity : entities)
+    //     {
+    //         manager.registerEntity(entity);
+    //     }
         
         std::cout << "Running Sequential DES...\n";
         auto stats = manager.run();
@@ -65,10 +65,10 @@ void runPHoldBenchmark(const uint64_t &num_entities, const uint32_t &threads, co
                .setDetailedStats(true)
                .configureNullMessages(lookahead, false);
         
-        for (const auto& entity : entities)
-        {
-            manager.registerEntity(entity);
-        }
+    //     for (const auto& entity : entities)
+    //     {
+    //         manager.registerEntity(entity);
+    //     }
         
         std::cout << "Running Null Messages PDES...\n";
         auto stats = manager.run();

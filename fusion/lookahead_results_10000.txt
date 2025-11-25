@@ -1,0 +1,2700 @@
+[RUN] Итерация 1
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0320944 seconds
+Events processed: 2143
+Event generated: 2143
+Efficiency: 66771.7 events/second
+Rollbacks: 97
+
+
+
+[RUN] Итерация 2
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0388065 seconds
+Events processed: 2198
+Event generated: 2198
+Efficiency: 56639.9 events/second
+Rollbacks: 89
+
+
+
+[RUN] Итерация 3
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0357638 seconds
+Events processed: 2220
+Event generated: 2220
+Efficiency: 62074 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 4
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0165867 seconds
+Events processed: 2063
+Event generated: 2063
+Efficiency: 124377 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 5
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0330551 seconds
+Events processed: 2059
+Event generated: 2059
+Efficiency: 62290 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 6
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0344518 seconds
+Events processed: 2203
+Event generated: 2203
+Efficiency: 63944.3 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 7
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0572495 seconds
+Events processed: 1993
+Event generated: 1993
+Efficiency: 34812.5 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 8
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.072555 seconds
+Events processed: 2075
+Event generated: 2075
+Efficiency: 28599 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 9
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0212262 seconds
+Events processed: 2067
+Event generated: 2067
+Efficiency: 97379.5 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 10
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0954083 seconds
+Events processed: 2218
+Event generated: 2218
+Efficiency: 23247.5 events/second
+Rollbacks: 98
+
+
+
+[RUN] Итерация 11
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0674661 seconds
+Events processed: 2208
+Event generated: 2208
+Efficiency: 32727.5 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 12
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0509987 seconds
+Events processed: 1994
+Event generated: 1994
+Efficiency: 39099.1 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 13
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.034046 seconds
+Events processed: 2129
+Event generated: 2129
+Efficiency: 62533 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 14
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0393595 seconds
+Events processed: 2174
+Event generated: 2174
+Efficiency: 55234.5 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 15
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0588963 seconds
+Events processed: 1983
+Event generated: 1983
+Efficiency: 33669.3 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 16
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.3
+Execution Time: 0.0461909 seconds
+Events processed: 2307
+Event generated: 2307
+Efficiency: 49944.9 events/second
+Rollbacks: 99
+
+
+
+[RUN] Итерация 17
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0293681 seconds
+Events processed: 2207
+Event generated: 2207
+Efficiency: 75149.6 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 18
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0589885 seconds
+Events processed: 2338
+Event generated: 2338
+Efficiency: 39634.9 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 19
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0447971 seconds
+Events processed: 2223
+Event generated: 2223
+Efficiency: 49623.7 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 20
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0439598 seconds
+Events processed: 2096
+Event generated: 2096
+Efficiency: 47680 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 21
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.040676 seconds
+Events processed: 2105
+Event generated: 2105
+Efficiency: 51750.4 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 22
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0574016 seconds
+Events processed: 2273
+Event generated: 2273
+Efficiency: 39598.2 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 23
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.036344 seconds
+Events processed: 2195
+Event generated: 2195
+Efficiency: 60395.1 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 24
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0318566 seconds
+Events processed: 2124
+Event generated: 2124
+Efficiency: 66673.9 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 25
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0460975 seconds
+Events processed: 2338
+Event generated: 2338
+Efficiency: 50718.5 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 26
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0396773 seconds
+Events processed: 2143
+Event generated: 2143
+Efficiency: 54010.7 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 27
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0282934 seconds
+Events processed: 2125
+Event generated: 2125
+Efficiency: 75105.9 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 28
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.035019 seconds
+Events processed: 2075
+Event generated: 2075
+Efficiency: 59253.6 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 29
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0273348 seconds
+Events processed: 2208
+Event generated: 2208
+Efficiency: 80776.2 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 30
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0186231 seconds
+Events processed: 2059
+Event generated: 2059
+Efficiency: 110562 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 31
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0610306 seconds
+Events processed: 2057
+Event generated: 2057
+Efficiency: 33704.4 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 32
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0618921 seconds
+Events processed: 1915
+Event generated: 1915
+Efficiency: 30941 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 33
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0346067 seconds
+Events processed: 2209
+Event generated: 2209
+Efficiency: 63831.6 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 34
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0469465 seconds
+Events processed: 2268
+Event generated: 2268
+Efficiency: 48310.4 events/second
+Rollbacks: 81
+
+
+
+[RUN] Итерация 35
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.027671 seconds
+Events processed: 2180
+Event generated: 2180
+Efficiency: 78782.7 events/second
+Rollbacks: 89
+
+
+
+[RUN] Итерация 36
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0506754 seconds
+Events processed: 1991
+Event generated: 1991
+Efficiency: 39289.3 events/second
+Rollbacks: 89
+
+
+
+[RUN] Итерация 37
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0518644 seconds
+Events processed: 2217
+Event generated: 2217
+Efficiency: 42746 events/second
+Rollbacks: 99
+
+
+
+[RUN] Итерация 38
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0628565 seconds
+Events processed: 2202
+Event generated: 2202
+Efficiency: 35032.2 events/second
+Rollbacks: 89
+
+
+
+[RUN] Итерация 39
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0487684 seconds
+Events processed: 2201
+Event generated: 2201
+Efficiency: 45131.7 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 40
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0504243 seconds
+Events processed: 2430
+Event generated: 2430
+Efficiency: 48191.1 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 41
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0405846 seconds
+Events processed: 2059
+Event generated: 2059
+Efficiency: 50733.5 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 42
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0203309 seconds
+Events processed: 2293
+Event generated: 2293
+Efficiency: 112784 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 43
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0624676 seconds
+Events processed: 1966
+Event generated: 1966
+Efficiency: 31472.3 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 44
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0238523 seconds
+Events processed: 2255
+Event generated: 2255
+Efficiency: 94540 events/second
+Rollbacks: 86
+
+
+
+[RUN] Итерация 45
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0716308 seconds
+Events processed: 1994
+Event generated: 1994
+Efficiency: 27837.2 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 46
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0368766 seconds
+Events processed: 2152
+Event generated: 2152
+Efficiency: 58356.8 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 47
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0442551 seconds
+Events processed: 2136
+Event generated: 2136
+Efficiency: 48265.6 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 48
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0436494 seconds
+Events processed: 2275
+Event generated: 2275
+Efficiency: 52119.8 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 49
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0582909 seconds
+Events processed: 2441
+Event generated: 2441
+Efficiency: 41876.2 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 50
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0438005 seconds
+Events processed: 2201
+Event generated: 2201
+Efficiency: 50250.6 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 51
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0588211 seconds
+Events processed: 2041
+Event generated: 2041
+Efficiency: 34698.4 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 52
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0340798 seconds
+Events processed: 2283
+Event generated: 2283
+Efficiency: 66989.8 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 53
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0509292 seconds
+Events processed: 2197
+Event generated: 2197
+Efficiency: 43138.3 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 54
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.064878 seconds
+Events processed: 1918
+Event generated: 1918
+Efficiency: 29563.2 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 55
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0300585 seconds
+Events processed: 2197
+Event generated: 2197
+Efficiency: 73090.7 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 56
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.014061 seconds
+Events processed: 2303
+Event generated: 2303
+Efficiency: 163787 events/second
+Rollbacks: 101
+
+
+
+[RUN] Итерация 57
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0347845 seconds
+Events processed: 2187
+Event generated: 2187
+Efficiency: 62872.9 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 58
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.034201 seconds
+Events processed: 2070
+Event generated: 2070
+Efficiency: 60524.6 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 59
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0529835 seconds
+Events processed: 2199
+Event generated: 2199
+Efficiency: 41503.5 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 60
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0398274 seconds
+Events processed: 2360
+Event generated: 2360
+Efficiency: 59255.7 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 61
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0323751 seconds
+Events processed: 2128
+Event generated: 2128
+Efficiency: 65729.6 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 62
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0277961 seconds
+Events processed: 2202
+Event generated: 2202
+Efficiency: 79219.8 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 63
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0534031 seconds
+Events processed: 2143
+Event generated: 2143
+Efficiency: 40128.7 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 64
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.044485 seconds
+Events processed: 2064
+Event generated: 2064
+Efficiency: 46397.6 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 65
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0269597 seconds
+Events processed: 2069
+Event generated: 2069
+Efficiency: 76744.1 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 66
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0132887 seconds
+Events processed: 1918
+Event generated: 1918
+Efficiency: 144333 events/second
+Rollbacks: 97
+
+
+
+[RUN] Итерация 67
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0230053 seconds
+Events processed: 2360
+Event generated: 2360
+Efficiency: 102585 events/second
+Rollbacks: 86
+
+
+
+[RUN] Итерация 68
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.3
+Execution Time: 0.0194007 seconds
+Events processed: 2205
+Event generated: 2205
+Efficiency: 113656 events/second
+Rollbacks: 97
+
+
+
+[RUN] Итерация 69
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0371627 seconds
+Events processed: 2059
+Event generated: 2059
+Efficiency: 55405 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 70
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0349959 seconds
+Events processed: 2065
+Event generated: 2065
+Efficiency: 59006.9 events/second
+Rollbacks: 96
+
+
+
+[RUN] Итерация 71
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0269054 seconds
+Events processed: 2108
+Event generated: 2108
+Efficiency: 78348.7 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 72
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0456763 seconds
+Events processed: 2147
+Event generated: 2147
+Efficiency: 47004.7 events/second
+Rollbacks: 93
+
+
+
+[RUN] Итерация 73
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0401092 seconds
+Events processed: 2171
+Event generated: 2171
+Efficiency: 54127.2 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 74
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0257429 seconds
+Events processed: 2210
+Event generated: 2210
+Efficiency: 85848.8 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 75
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.027376 seconds
+Events processed: 2059
+Event generated: 2059
+Efficiency: 75211.8 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 76
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0616524 seconds
+Events processed: 2205
+Event generated: 2205
+Efficiency: 35765 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 77
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0552498 seconds
+Events processed: 2141
+Event generated: 2141
+Efficiency: 38751.3 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 78
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0440771 seconds
+Events processed: 2132
+Event generated: 2132
+Efficiency: 48369.8 events/second
+Rollbacks: 88
+
+
+
+[RUN] Итерация 79
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0341433 seconds
+Events processed: 1991
+Event generated: 1991
+Efficiency: 58313 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 80
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0409958 seconds
+Events processed: 2176
+Event generated: 2176
+Efficiency: 53078.6 events/second
+Rollbacks: 87
+
+
+
+[RUN] Итерация 81
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0760525 seconds
+Events processed: 2257
+Event generated: 2257
+Efficiency: 29676.9 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 82
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0472889 seconds
+Events processed: 1998
+Event generated: 1998
+Efficiency: 42250.9 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 83
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0323939 seconds
+Events processed: 1992
+Event generated: 1992
+Efficiency: 61493.1 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 84
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0363116 seconds
+Events processed: 1990
+Event generated: 1990
+Efficiency: 54803.4 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 85
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0341958 seconds
+Events processed: 2152
+Event generated: 2152
+Efficiency: 62931.8 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 86
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0374101 seconds
+Events processed: 2272
+Event generated: 2272
+Efficiency: 60732.3 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 87
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0272834 seconds
+Events processed: 1991
+Event generated: 1991
+Efficiency: 72974.7 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 88
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0228642 seconds
+Events processed: 1994
+Event generated: 1994
+Efficiency: 87210.7 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 89
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.031545 seconds
+Events processed: 1924
+Event generated: 1924
+Efficiency: 60992.3 events/second
+Rollbacks: 90
+
+
+
+[RUN] Итерация 90
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0602109 seconds
+Events processed: 2144
+Event generated: 2144
+Efficiency: 35608.2 events/second
+Rollbacks: 97
+
+
+
+[RUN] Итерация 91
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0222485 seconds
+Events processed: 2124
+Event generated: 2124
+Efficiency: 95467.2 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 92
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0323577 seconds
+Events processed: 2122
+Event generated: 2122
+Efficiency: 65579.5 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 93
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0404328 seconds
+Events processed: 1991
+Event generated: 1991
+Efficiency: 49242.1 events/second
+Rollbacks: 91
+
+
+
+[RUN] Итерация 94
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0233461 seconds
+Events processed: 2214
+Event generated: 2214
+Efficiency: 94834 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 95
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0461505 seconds
+Events processed: 2064
+Event generated: 2064
+Efficiency: 44723.2 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 96
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0389214 seconds
+Events processed: 2277
+Event generated: 2277
+Efficiency: 58502.5 events/second
+Rollbacks: 95
+
+
+
+[RUN] Итерация 97
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0739932 seconds
+Events processed: 2076
+Event generated: 2076
+Efficiency: 28056.6 events/second
+Rollbacks: 94
+
+
+
+[RUN] Итерация 98
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.1
+Execution Time: 0.0217436 seconds
+Events processed: 1992
+Event generated: 1992
+Efficiency: 91613.2 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 99
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.0415605 seconds
+Events processed: 2370
+Event generated: 2370
+Efficiency: 57025.3 events/second
+Rollbacks: 92
+
+
+
+[RUN] Итерация 100
+DES/PDES PHold Test Program
+============================
+
+Running PHOLD Benchmark Tests
+============================
+
+Running Time Warp PDES...
+Entities registered: 1024
+
+=== Simulation Results ===
+Simulation Statistics
+=====================
+
+Algorithm: Time Warp
+Threads: 4
+LPs: 16
+
+Simulation time: 10000.2
+Execution Time: 0.066319 seconds
+Events processed: 2367
+Event generated: 2367
+Efficiency: 35691.1 events/second
+Rollbacks: 90
+
+
+

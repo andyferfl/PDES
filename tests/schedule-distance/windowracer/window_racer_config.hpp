@@ -20,7 +20,7 @@ const int cpu_stride = 1;
 
 const uint64_t num_threads = 4;
 
-const uint64_t num_entities = 256;
+const uint64_t num_entities = 16;
 
 const int phold_events_per_entity = 1;
 const double phold_lambda = 1;

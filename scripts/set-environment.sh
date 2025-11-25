@@ -42,6 +42,8 @@ export SST_DIR=$BASE_DIR/platforms/sst-core
 export SST_SRC_DIR=$SST_DIR/sst-core-src
 export SST_BUILD_DIR=$SST_DIR/build
 export SST_INSTALL_DIR=$SST_DIR/sst-core-install
+export SST_INC_DIR=$SST_INSTALL_DIR/include
+export SST_LIB_DIR=$SST_INSTALL_DIR/lib
 
 export PATH=$SST_INSTALL_DIR/bin:$PATH
 

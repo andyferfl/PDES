@@ -1,0 +1,59 @@
+name: PDES CI/CD
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "1=run, 2=regression, 3=deploy, 4=rolling update"
+        required: true
+        default: "1"
+
+jobs:
+  pdes-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Docker
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build PDES Docker image
+        run: |
+          docker build -t pdes:latest .
+
+      - name: Mode 1 — Run only
+        if: ${{ github.event.inputs.mode == '1' }}
+        run: |
+          docker run --name pdes_test -d pdes:latest
+          sleep 5
+          docker logs pdes_test
+
+      - name: Mode 2 — Regression tests
+        if: ${{ github.event.inputs.mode == '2' }}
+        run: |
+          chmod +x scripts/schedule-distance.sh
+          docker run -v $PWD:/workspace pdes:latest \
+            /bin/bash -c "cd /workspace && ./scripts/schedule-distance.sh"
+
+      - name: Mode 3 — Deploy (start new container)
+        if: ${{ github.event.inputs.mode == '3' }}
+        run: |
+          docker stop pdes-running || true
+          docker rm pdes-running || true
+          docker run -d --name pdes-running -p 8080:8080 pdes:latest
+
+      - name: Mode 4 — Rolling update
+        if: ${{ github.event.inputs.mode == '4' }}
+        run: |
+          docker pull pdes:latest
+
+          if docker ps -q -f name=pdes-running; then
+            docker stop pdes-running
+            docker rm pdes-running
+          fi
+
+          docker run -d --name pdes-running -p 8080:8080 pdes:latest

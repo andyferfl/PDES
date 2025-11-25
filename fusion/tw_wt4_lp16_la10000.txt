@@ -1,0 +1,7 @@
+Threads: 4
+LPs: 16
+Average Simulation time: 10000.2
+Average Execution Time: 0.0415712
+Average Events processed: 2146.04
+Average Efficiency: 59713.3
+Average Rollbacks: 91.98

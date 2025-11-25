@@ -27,13 +27,20 @@ SSTCONFIGCMD = $(SST_INSTALL_DIR)/bin/sst-config $(SSTCONFARG)
 
 CC=$(shell       $(SSTCONFIGCMD) --CC)
 CXX=$(shell      $(SSTCONFIGCMD) --CXX)
-CXXFLAGS=$(shell $(SSTCONFIGCMD) --ELEMENT_CXXFLAGS) 
+# CXXFLAGS=$(shell $(SSTCONFIGCMD) --ELEMENT_CXXFLAGS) 
 CXXFLAGS += -I$(SST_INSTALL_DIR)/include
+CXXFLAGS += -I/usr/include/python3.10
+CXXFLAGS += -fPIC
+
+# LDFLAGS = -L$(SST_INSTALL_DIR)/lib
 LDFLAGS=$(shell  $(SSTCONFIGCMD) --ELEMENT_LDFLAGS)
-SSTLIBDIR=$(shell $(SSTCONFIGCMD) SST_ELEMENT_LIBRARY SST_ELEMENT_LIBRARY_LIBDIR)
-ifeq ($(SSTLIBDIR),)
-  SSTLIBDIR=$(shell $(SSTCONFIGCMD) --libdir)/sst-elements-library
-endif
+# SSTLIBDIR=$(shell $(SSTCONFIGCMD) SST_ELEMENT_LIBRARY SST_ELEMENT_LIBRARY_LIBDIR)
+
+# ifeq ($(SSTLIBDIR),)
+#   SSTLIBDIR=$(shell $(SSTCONFIGCMD) --libdir)/sst-elements-library
+# endif
+SSTLIBDIR = $(SST_INSTALL_DIR)/lib/sst-elements-library
+
 $(info CXXFLAGS = $(CXXFLAGS))
 
 # Add hard-coded path to help out CLion
@@ -139,7 +146,7 @@ $(LIB): $(LIBOBJS)
 	@echo "LD $@ $(WHY)"
 	$(VERB)$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $^
 
-SSTREGCMD = sst-register $(SSTCONFARG)
+SSTREGCMD = sst-register --config-dir=$(SST_INSTALL_DIR)/etc/sst --library=libphold.so --libdir=$(SSTLIBDIR)
 install: $(LIB)
 	@echo "SST_REG $(basename $<) to $(SSTLIBDIR) $(WHY)"
 	$(VERB)mkdir -p $(LIBDIR)
@@ -148,6 +155,7 @@ install: $(LIB)
 	$(VERB)cp $< $(SSTLIBDIR)
 	$(VERB)touch $(SSTCONFIG_PHOLD)
 	$(VERB)$(SSTREGCMD) SST_ELEMENT_LIBRARY SST_ELEMENT_LIBRARY_LIBDIR=$(SSTLIBDIR)
+	$(VERB)$(SSTREGCMD) --library=$(LIB) --libdir=$(SSTLIBDIR)
 
 
 PHOLDTEST=../tests/phold.py

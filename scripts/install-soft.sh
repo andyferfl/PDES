@@ -1,4 +1,6 @@
-# !/bin/bash
+#!/bin/bash
+cd "$(dirname "$0")/.."   
+. ./scripts/set-environment.sh   
 
 echo "Downloading python..."
 wget --quiet --no-clobber --output-file=$INSTALL_LOGS_DIR \
@@ -13,7 +15,7 @@ CFLAGS="-Wno-array-bounds -Wno-stringop-truncation" ./configure --with-strict-ov
 
 echo "Getting ready python..."
 make --jobs=$(nproc) >> $INSTALL_LOGS_DIR
-make --jobs=$(nproc) test >> $INSTALL_LOGS_DIR
+# make --jobs=$(nproc) test >> $INSTALL_LOGS_DIR
 
 echo "Installing python..."
 make install >> $INSTALL_LOGS_DIR
@@ -29,8 +31,8 @@ tar -xvzf $SOFT_DIR/cmake-3.31.5.tar.gz --directory=$SOFT_DIR >> $INSTALL_LOGS_D
 cd $SOFT_DIR/cmake-3.31.5
 
 echo "Configurating cmake..."
-./bootstrap --parallel=$(nproc) --prefix=$CMAKE_INSTALL_DIR >> $INSTALL_LOGS_DIR
-make --jobs=$(nproc) >> $INSTALL_LOGS_DIR
+./bootstrap --parallel=$(nproc) --prefix=$CMAKE_INSTALL_DIR -- -DCMAKE_USE_OPENSSL=ON 
+make --jobs=$(nproc) 
 
 echo "Installing cmake..."
 make install >> $INSTALL_LOGS_DIR
@@ -62,8 +64,8 @@ chmod +x autogen.sh
 ./configure --prefix=$TIMESTRETCH_INSTALL_DIR 2>/dev/null
 
 echo "Installing dependencies for SST..."
-DEBIAN_FRONTEND=noninteractive sudo apt update
-DEBIAN_FRONTEND=noninteractive sudo apt install -y gfortran valgrind libevent-dev hwloc libhwloc-dev libpmix-dev sphinx-common \
+DEBIAN_FRONTEND=noninteractive apt update
+DEBIAN_FRONTEND=noninteractive apt install -y gfortran valgrind libevent-dev hwloc libhwloc-dev libpmix-dev sphinx-common \
     libffi-dev openmpi-bin openmpi-common libtool libtool-bin autoconf python3 python3-dev automake build-essential git \
     >> $INSTALL_LOGS_DIR
 

@@ -3,24 +3,6 @@
 namespace fusion
 {
 
-// Event::Event(double timestamp, uint64_t source_id, uint64_t target_id, uint32_t type_id)
-//     : timestamp_(timestamp),
-//         source_id_(source_id),
-//         target_id_(target_id),
-//         type_id_(type_id)
-// {
-// }
-
-// Event::Event(double timestamp, uint64_t source_id, uint64_t target_id, uint32_t type_id, std::any data)
-// : timestamp_(timestamp),
-//     source_id_(source_id),
-//     target_id_(target_id),
-//     type_id_(type_id),
-//     data_(data)
-// {
-// }
-
-
 Event::Event(double timestamp, uint64_t source_id, uint64_t target_id, uint32_t type_id)
     : timestamp_(timestamp),
       source_id_(source_id),

@@ -1,0 +1,45 @@
+@startuml TimeWarpEngine
+
+class TimeWarpEngine {
+  +TimeWarpEngine(config)
+  +registerEntity(entity)
+  +initialize()
+  +run() : SimulationStats
+  +getCurrentTime() : double
+  +calculateGVT()
+  +performFossilCollection(gvt)
+  -logical_processes_ : vector<TimeWarpLP>
+  -worker_threads_ : vector<thread>
+  -global_virtual_time_ : atomic<double>
+}
+
+class TimeWarpLP {
+  +processNextEvent() : bool
+  +deliverRemoteEvents(all_lps)
+  +rollback(rollback_time)
+  +fossilCollect(gvt)
+  -event_queue_ : priority_queue<Event>
+  -saved_states_ : map<time, entity_state>
+  -pending_remote_events_ : map<entity_id, vector<Event>>
+}
+
+class Entity {
+  +getID() : uint64_t
+  +processEvent(Event)
+  +saveState()
+  +restoreState()
+}
+
+class Event {
+  +timestamp : double
+  +source_id : uint64_t
+  +destination_id : uint64_t
+  +event_type
+  +data
+}
+
+TimeWarpEngine --> "1..*" TimeWarpLP
+TimeWarpLP --> "1..*" Event
+TimeWarpLP --> "1..*" Entity
+
+@enduml

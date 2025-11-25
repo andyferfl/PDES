@@ -1,0 +1,50 @@
+# === Игнорируем сборку, бинарники и объектные файлы ===
+*.a
+*.out
+*.log
+*.tmp
+
+# === Кэш и временные каталоги ===
+build/
+bin/
+dist/
+cache/
+__pycache__/
+
+# === Логи симулятора ===
+logs.o
+outputs/
+results/
+
+# === Платформы, собранные ранее ===
+soft/Python-3.12.8/
+soft/cmake-3.31.5/
+soft/openmpi-5.0.7/
+soft/libtimestretch-master/
+platforms/rootsim/
+platforms/window-racer/
+platforms/sst-core/
+papers/
+
+# === Лишние большие директории ===
+fusion/.cache/
+fusion/build/
+
+# === Docker не должен копировать git-историю (она может весить гигабайты) ===
+.git/
+.gitignore
+
+# === IDE и редакторы ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Python окружения ===
+env/
+venv/
+.venv/
+
+# === WSL специфические штуки (на всякий случай) ===
+*.bak
+Thumbs.db
